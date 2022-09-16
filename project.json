@@ -36,8 +36,8 @@
       "includeOriginalXaml": false,
       "privateWorkflows": [
         "__AddItem.xaml",
-        "__TestChangeContent.xaml",
-        "__TestGetQueueItems.xaml",
+        "__Test_Update Queue Item Data.xaml",
+        "__Test_Get All Queue Items.xaml",
         "__GetQueueItems_Abandoned.xaml",
         "__GetQueueItems_Deleted.xaml",
         "__GetQueueItems_Failed.xaml",
