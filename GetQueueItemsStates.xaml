@@ -17,7 +17,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1087,1354</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1087,1483</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -80,7 +80,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="616,1289" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="616,1418" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
     </Sequence.Variables>
@@ -97,13 +97,13 @@
         <InArgument x:TypeArguments="scg:List(ui:QueueItem)">[new List(Of QueueItem)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="574,1097" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[QueueItemStates]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="574,1226" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[QueueItemStates]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="state" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538,973" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538,1102" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(ui:QueueItem)" Name="qItemsTemp" />
             </Sequence.Variables>
@@ -112,45 +112,63 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[state]" sap:VirtualizedContainerService.HintSize="496,428" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[state]" sap:VirtualizedContainerService.HintSize="496,426" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <Switch.Default>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke __GetQueueItems_InProgress workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="__GetQueueItems_All.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="TimeoutMS">
+                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="TimeoutMS" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="QueueName">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="QueueName" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="FolderPath">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FolderPath" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="s:Nullable(x:Int32)" x:Key="Duration">
+                      <mva:VisualBasicValue x:TypeArguments="s:Nullable(x:Int32)" ExpressionText="Duration" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Priority">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Priority" />
+                    </InArgument>
+                    <OutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="QueueItems">
+                      <mva:VisualBasicReference x:TypeArguments="scg:List(ui:QueueItem)" ExpressionText="qITemsTemp" />
+                    </OutArgument>
+                    <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterTo">
+                      <mva:VisualBasicValue x:TypeArguments="s:Nullable(s:DateTime)" ExpressionText="FilterTo" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterFrom">
+                      <mva:VisualBasicValue x:TypeArguments="s:Nullable(s:DateTime)" ExpressionText="FilterFrom" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="FilterStrategy">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FilterStrategy" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Reference">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="FilterTop">
+                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="FilterTop" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="Continue_OnError">
+                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Continue_OnError" />
+                    </InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+              </Switch.Default>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="InProgress" DisplayName="Invoke __GetQueueItems_InProgress workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="__GetQueueItems_InProgress.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="TimeoutMS">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="TimeoutMS" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="QueueName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="QueueName" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="FolderPath">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FolderPath" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="s:Nullable(x:Int32)" x:Key="Duration">
-                    <mva:VisualBasicValue x:TypeArguments="s:Nullable(x:Int32)" ExpressionText="Duration" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Priority">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Priority" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="QueueItems">
-                    <mva:VisualBasicReference x:TypeArguments="scg:List(ui:QueueItem)" ExpressionText="qITemsTemp" />
-                  </OutArgument>
-                  <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterTo">
-                    <mva:VisualBasicValue x:TypeArguments="s:Nullable(s:DateTime)" ExpressionText="FilterTo" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterFrom">
-                    <mva:VisualBasicValue x:TypeArguments="s:Nullable(s:DateTime)" ExpressionText="FilterFrom" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="FilterStrategy">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FilterStrategy" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Reference">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Reference" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="FilterTop">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="FilterTop" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Boolean" x:Key="Continue_OnError">
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Continue_OnError" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="TimeoutMS">[TimeoutMS]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="QueueName">[QueueName]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="FolderPath">[FolderPath]</InArgument>
+                  <InArgument x:TypeArguments="s:Nullable(x:Int32)" x:Key="Duration">[Duration]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Priority">[Priority]</InArgument>
+                  <OutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="QueueItems">[qITemsTemp]</OutArgument>
+                  <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterTo">[FilterTo]</InArgument>
+                  <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterFrom">[FilterFrom]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="FilterStrategy">[FilterStrategy]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Reference">[Reference]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="FilterTop">[FilterTop]</InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="Continue_OnError">[Continue_OnError]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="Failed" DisplayName="Invoke __GetQueueItems_Failed workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="__GetQueueItems_Failed.xaml">
@@ -250,6 +268,7 @@
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Switch>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[qItemsTemp.Count]" />
             <If Condition="[qItemsTemp.Count &gt; 0]" DisplayName="If Any Items Found" sap:VirtualizedContainerService.HintSize="496,413" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="280,226" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -262,9 +281,7 @@
                     <InvokeMethod.TargetObject>
                       <InArgument x:TypeArguments="scg:List(ui:QueueItem)">[QueueItems]</InArgument>
                     </InvokeMethod.TargetObject>
-                    <InArgument x:TypeArguments="scg:IEnumerable(ui:QueueItem)">
-                      <mva:VisualBasicValue x:TypeArguments="scg:IEnumerable(ui:QueueItem)" ExpressionText="qItemsTemp" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="scg:IEnumerable(ui:QueueItem)">[qItemsTemp]</InArgument>
                   </InvokeMethod>
                 </Sequence>
               </If.Then>

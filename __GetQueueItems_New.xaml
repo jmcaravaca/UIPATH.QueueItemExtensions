@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>973,1226</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1087,1522</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -80,7 +80,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="773,1232" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="773,1457" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
       <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="qItems" />
@@ -99,16 +99,26 @@
         <InArgument x:TypeArguments="scg:List(ui:QueueItem)">[new List(Of QueueItem)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleDoWhile DisplayName="Get All Items" sap:VirtualizedContainerService.HintSize="731,1040" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile Condition="[ItemCount = 100]" DisplayName="Get All Items" sap:VirtualizedContainerService.HintSize="731,1265" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="695,875" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="695,1100" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Switch x:TypeArguments="x:String" DisplayName="Switch FIlterSTrategy" Expression="[FilterStrategy]" sap:VirtualizedContainerService.HintSize="653,159" sap2010:WorkflowViewState.IdRef="Switch`1_3">
-            <Switch x:TypeArguments="x:String" x:Key="StartsWith" DisplayName="Switch&lt;StringPriority" Expression="[Priority]" sap:VirtualizedContainerService.HintSize="496,499" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+          <Switch x:TypeArguments="x:String" DisplayName="Switch FIlterSTrategy" Expression="[FilterStrategy]" sap:VirtualizedContainerService.HintSize="653,384" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+            <Switch.Default>
+              <Switch x:TypeArguments="x:String" DisplayName="Switch&lt;StringPriority" Expression="[Priority]" sap:VirtualizedContainerService.HintSize="496,181" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+                <Switch.Default>
+                  <ui:GetQueueItems Priority="{x:Null}" Top="{x:Null}" ContinueOnError="[Continue_OnError]" DisplayName="Get Queue Items" Duration="[Duration]" FilterStrategy="StartsWith" FolderPath="[FolderPath]" From="[FilterFrom]" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="GetQueueItems_13" QueueItemStates="New" QueueName="[QueueName]" Reference="[Reference]" Result="[qItems]" Skip="[index * 100]" TimeoutMS="[TimeoutMS]" To="[FilterTo]" />
+                </Switch.Default>
+                <ui:GetQueueItems Top="{x:Null}" x:Key="High" ContinueOnError="[Continue_OnError]" DisplayName="Get Queue Items" Duration="[Duration]" FilterStrategy="StartsWith" FolderPath="[FolderPath]" From="[FilterFrom]" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="GetQueueItems_10" Priority="[0]" QueueItemStates="New" QueueName="[QueueName]" Reference="[Reference]" Result="[qItems]" Skip="[index * 100]" TimeoutMS="[TimeoutMS]" To="[FilterTo]" />
+                <ui:GetQueueItems Top="{x:Null}" x:Key="Normal" ContinueOnError="[Continue_OnError]" DisplayName="Get Queue Items" Duration="[Duration]" FilterStrategy="StartsWith" FolderPath="[FolderPath]" From="[FilterFrom]" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="GetQueueItems_11" Priority="[1]" QueueItemStates="New" QueueName="[QueueName]" Reference="[Reference]" Result="[qItems]" Skip="[index * 100]" TimeoutMS="[TimeoutMS]" To="[FilterTo]" />
+                <ui:GetQueueItems Top="{x:Null}" x:Key="Low" ContinueOnError="[Continue_OnError]" DisplayName="Get Queue Items" Duration="[Duration]" FilterStrategy="StartsWith" FolderPath="[FolderPath]" From="[FilterFrom]" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="GetQueueItems_12" Priority="[2]" QueueItemStates="New" QueueName="[QueueName]" Reference="[Reference]" Result="[qItems]" Skip="[index * 100]" TimeoutMS="[TimeoutMS]" To="[FilterTo]" />
+              </Switch>
+            </Switch.Default>
+            <Switch x:TypeArguments="x:String" x:Key="StartsWith" DisplayName="Switch&lt;StringPriority" Expression="[Priority]" sap:VirtualizedContainerService.HintSize="496,181" sap2010:WorkflowViewState.IdRef="Switch`1_1">
               <Switch.Default>
                 <ui:GetQueueItems Priority="{x:Null}" Top="{x:Null}" ContinueOnError="[Continue_OnError]" DisplayName="Get Queue Items" Duration="[Duration]" FilterStrategy="StartsWith" FolderPath="[FolderPath]" From="[FilterFrom]" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="GetQueueItems_5" QueueItemStates="New" QueueName="[QueueName]" Reference="[Reference]" Result="[qItems]" Skip="[index * 100]" TimeoutMS="[TimeoutMS]" To="[FilterTo]" />
               </Switch.Default>
@@ -178,9 +188,6 @@
           </If>
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
-      <ui:InterruptibleDoWhile.Condition>
-        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ItemCount = 100" />
-      </ui:InterruptibleDoWhile.Condition>
     </ui:InterruptibleDoWhile>
   </Sequence>
 </Activity>
