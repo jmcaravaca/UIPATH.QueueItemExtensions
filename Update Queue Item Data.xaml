@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1089,2946</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1089,2962</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ChangeContent_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -70,10 +70,9 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Update Queue Item" sap:VirtualizedContainerService.HintSize="568,2750" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Updates TransactionItem on Orchestrator with the parameters in the local variable.&#xD;&#xA;ARGUMENTS:&#xD;&#xA;- Force: By default, &quot;In Progress&quot; items cannot be changed. &quot;Force&quot; attempts to change the item data by first changing it to &quot;New&quot; before grabbing it again&#xD;&#xA;- TransactionItem: The QueueItem Variable that was previously used and has been changed since it was uploaded to Orchestrator&#xD;&#xA;- QueueFolder: The Path to the Folder the Queue is in. Only needed for &quot;InProgress&quot; items where Force is True&#xD;&#xA;" DisplayName="Update Queue Item" sap:VirtualizedContainerService.HintSize="568,2897" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[New Dictionary(Of String, Object)]" Name="APIBodyDict" />
       <Variable x:TypeArguments="x:String" Name="APIBodyString" />
@@ -84,6 +83,7 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Assign sap:VirtualizedContainerService.HintSize="526,60" sap2010:WorkflowViewState.IdRef="Assign_4">
