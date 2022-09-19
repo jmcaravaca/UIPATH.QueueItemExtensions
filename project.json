@@ -3,9 +3,8 @@
   "description": "This library allows you to modify queue items in ways that the standard UIPath activities don't include by using the Orchestrator API",
   "main": "NewActivity.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "2.11.4",
-    "UiPath.Mail.Activities": "1.12.3",
     "UiPath.System.Activities": "21.10.5",
+    "UiPath.Testing.Activities": "22.4.3",
     "UiPath.UIAutomation.Activities": "21.10.5"
   },
   "webServices": [],
@@ -51,7 +50,14 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [],
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "5103ffad-4ed0-4164-8b59-921133fe99bd",
+        "dataVariationFilePath": ".variations\\UpdateQueueItemData_TestData_Sheet1.json",
+        "fileName": "TC_001_Update Queue Item Data.xaml"
+      }
+    ],
     "modernBehavior": true
   },
   "expressionLanguage": "VisualBasic",

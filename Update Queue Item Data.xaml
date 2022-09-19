@@ -3,12 +3,11 @@
     <x:Property Name="Force" Type="InArgument(x:Boolean)" />
     <x:Property Name="TransactionItem" Type="InOutArgument(ui:QueueItem)" />
     <x:Property Name="QueueFolder" Type="InArgument(x:String)" />
-    <x:Property Name="Response" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>973,3254</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1089,2946</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ChangeContent_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -74,18 +73,27 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Update Queue Item" sap:VirtualizedContainerService.HintSize="568,3305" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Update Queue Item" sap:VirtualizedContainerService.HintSize="568,2750" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[New Dictionary(Of String, Object)]" Name="APIBodyDict" />
       <Variable x:TypeArguments="x:String" Name="APIBodyString" />
       <Variable x:TypeArguments="x:String" Name="JSONResponse" />
       <Variable x:TypeArguments="x:Int32" Name="StatusCode" />
+      <Variable x:TypeArguments="x:String" Name="ItemStatus" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="526,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[ItemStatus]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[TransactionItem.Status.ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
     <Sequence DisplayName="Validate Inputs" sap:VirtualizedContainerService.HintSize="526,1113" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:String[]" Default="[{&quot;New&quot;,&quot;Failed&quot;,&quot;Abandoned&quot;}]" Name="AllowedStatus" />
@@ -173,7 +181,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <ui:MultipleAssign DisplayName="Create Dictionary of API Body" sap:VirtualizedContainerService.HintSize="526,224" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Create Dictionary of API Body" sap:VirtualizedContainerService.HintSize="526,255" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -216,6 +224,14 @@
               <InArgument x:TypeArguments="x:Object">[TransactionItem.DueDate]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[APIBodyDict("Progress")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[TransactionItem.Progress]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
@@ -233,9 +249,7 @@
         <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.JsonConvert.SerializeObject(APIBodyDict)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[APIBodyString]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[TransactionITem.status.ToString]" />
-    <If Condition="[Force And TransactionItem.status.ToString = &quot;InProgress&quot;]" DisplayName="If Force, temporarily postpone item" sap:VirtualizedContainerService.HintSize="526,266" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[Force And ItemStatus  = &quot;InProgress&quot;]" DisplayName="If Force, temporarily postpone item" sap:VirtualizedContainerService.HintSize="526,266" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -256,16 +270,6 @@
       </If.Else>
     </If>
     <ui:OrchestratorHttpRequest ResponseHeaders="{x:Null}" TimeoutMS="{x:Null}" DisplayName="OrchestratorAPI-PUT QueueItem" FolderPath="[QueueFolder]" sap:VirtualizedContainerService.HintSize="526,22" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" JSONPayload="[APIBodyString]" Method="PUT" RelativeEndpoint="[&quot;/odata/QueueItems(&quot; + CStr(TransactionItem.Id) + &quot;)&quot;]" Result="[JSONResponse]" StatusCode="[StatusCode]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[TransactionITem.status.ToString]" />
-    <Assign DisplayName="Assign Output" sap:VirtualizedContainerService.HintSize="526,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[Response]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[JSONResponse]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[Response]" />
     <If Condition="[StatusCode &gt;= 300]" DisplayName="If Request was not succesful" sap:VirtualizedContainerService.HintSize="526,301" sap2010:WorkflowViewState.IdRef="If_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -293,7 +297,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[Force And TransactionItem.status.ToString = &quot;Successful&quot;]" DisplayName="If Force, try to get the item again" sap:VirtualizedContainerService.HintSize="526,363" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[Force And ItemStatus = &quot;InProgress&quot;]" DisplayName="If Force, try to get the item again" sap:VirtualizedContainerService.HintSize="526,301" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -301,13 +305,12 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="242,176" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
           <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" FilterStrategy="Equals" FolderPath="[QueueFolder]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetQueueItem_1" QueueType="[TransactionItem.QueueName]" Reference="[TransactionItem.Reference]" TransactionItem="[TransactionItem]" />
         </Sequence>
       </If.Then>
