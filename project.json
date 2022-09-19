@@ -35,8 +35,6 @@
       "includeOriginalXaml": false,
       "privateWorkflows": [
         "__AddItem.xaml",
-        "__Test_Update Queue Item Data.xaml",
-        "__Test_Get All Queue Items.xaml",
         "__GetQueueItems_Abandoned.xaml",
         "__GetQueueItems_Deleted.xaml",
         "__GetQueueItems_Failed.xaml",
@@ -56,6 +54,12 @@
         "testCaseId": "5103ffad-4ed0-4164-8b59-921133fe99bd",
         "dataVariationFilePath": ".variations\\UpdateQueueItemData_TestData_Sheet1.json",
         "fileName": "TC_001_Update Queue Item Data.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "2f458d8b-fbb3-4013-845d-71069eeb13c8",
+        "dataVariationFilePath": ".variations\\Get All Queue Items_TestData_Sheet1.json",
+        "fileName": "TC_002_Get All Queue Items.xaml"
       }
     ],
     "modernBehavior": true

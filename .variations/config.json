@@ -3,6 +3,10 @@
     {
       "filePath": ".variations\\UpdateQueueItemData_TestData_Sheet1.json",
       "dataVariationType": "File"
+    },
+    {
+      "filePath": ".variations\\Get All Queue Items_TestData_Sheet1.json",
+      "dataVariationType": "File"
     }
   ]
 }
