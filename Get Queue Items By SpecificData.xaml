@@ -17,7 +17,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1089,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1177,827</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -79,7 +79,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="TODO&#xA;Bypasses the 100 limit when using a &quot;Get Queue Items&quot; activity by doing it until no more results are available&#xA;ARGUMENTS:&#xA;Same as &quot;Get Queue Items&quot; Activity, with QueueItemStates being an array of the states." DisplayName="Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="304,269" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems?%24filter=contains(SpecificData%2C%20'%22linea%5C%22%3A%5C%22677196848')&amp;%24top=1&quot; -H  &quot;accept: application/json&quot;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;contains(SpecificData, '&quot;linea\&quot;:\&quot;677196848')" DisplayName="Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="304,284" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
     </Sequence.Variables>
