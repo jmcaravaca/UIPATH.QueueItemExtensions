@@ -1,13 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TC_002_Get_All_Queue_Items" this:TC_002_Get_All_Queue_Items.QueueName="Redes-008_ITSM_JAM" this:TC_002_Get_All_Queue_Items.QueueFolder="Tech/REDES" this:TC_002_Get_All_Queue_Items.Status="All" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TC_002_Get_All_Queue_Items" this:TC_002_Get_All_Queue_Items.QueueName="Redes-008_ITSM_JAM" this:TC_002_Get_All_Queue_Items.QueueFolder="Tech/REDES" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="QueueName" Type="InArgument(x:String)" />
     <x:Property Name="QueueFolder" Type="InArgument(x:String)" />
-    <x:Property Name="Status" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1089,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1211,827</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TC_002_Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -66,9 +65,8 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC_002_Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="418,711" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC_002_Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="418,642" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="s:String[]" Name="qItemStates" />
       <Variable x:TypeArguments="scg:List(ui:QueueItem)" Name="qItems" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -76,20 +74,12 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="376,152" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="376,83" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Get Queue item States to Array" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-        <Assign.To>
-          <OutArgument x:TypeArguments="s:String[]">[qItemStates]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="s:String[]">[Strings.Split(Status,",")]</InArgument>
-        </Assign.Value>
-      </Assign>
     </Sequence>
     <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
@@ -109,9 +99,11 @@
             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="QueueFolder" />
           </InArgument>
           <InArgument x:TypeArguments="s:Nullable(x:Int32)" x:Key="Duration" />
-          <InArgument x:TypeArguments="x:String" x:Key="Priority" />
-          <InArgument x:TypeArguments="s:String[]" x:Key="QueueItemStates">
-            <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="qItemStates" />
+          <InArgument x:TypeArguments="ui:QueueItemPriority" x:Key="Priority">
+            <mva:VisualBasicValue x:TypeArguments="ui:QueueItemPriority" ExpressionText="QueueItemPriority.Normal" />
+          </InArgument>
+          <InArgument x:TypeArguments="ui:QueueItemStatus[]" x:Key="QueueItemStates">
+            <mva:VisualBasicValue x:TypeArguments="ui:QueueItemStatus[]" ExpressionText="{}{}" />
           </InArgument>
           <OutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="QueueItems">
             <mva:VisualBasicReference x:TypeArguments="scg:List(ui:QueueItem)" ExpressionText="qItems" />
@@ -133,7 +125,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Status: &quot; + Status + &quot; : &quot; + Cstr(qItems.Count)]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[qItems.Count]" />
     </Sequence>
   </Sequence>
 </Activity>

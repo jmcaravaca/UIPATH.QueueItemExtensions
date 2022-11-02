@@ -1,6 +1,6 @@
 {
   "name": "QueueItemExtensions",
-  "description": "This library allows you to modify queue items in ways that the standard UIPath activities don't include by using the Orchestrator API",
+  "description": "This library provides additional methods to get and manipulate queue items by using the Orchestrator API:\r\n- Modify SpecificContent\r\n- Get Queue Items (more than 100 items per call)\r\n- Get All Queue Items (filtered by \"Progress\" String)\r\n- Get All Queue Items (filtered by key-value pair in SpecificContent)",
   "main": "NewActivity.xaml",
   "dependencies": {
     "Newtonsoft.Json": "13.0.1",

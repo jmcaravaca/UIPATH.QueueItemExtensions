@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1211,2020</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1211,2080</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -77,10 +77,9 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Filter Queue ITems by &quot;SpecificData&quot;: Returns a List&lt;QueueItem&gt; with all the QueueItems that contains the specified key-value pair&#xA;Limit 1000 items.&#xA;Can also filter by Reference (Filter is StartsWith)&#xD;&#xA;&#xA;&#xD;&#xA;&#xD;&#xA;&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="705,1955" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Filter Queue Items by &quot;Specific Data&quot;: Returns a List&lt;QueueItem&gt; with all the QueueItems where the Key-Value pair exists in the Specific Content.&#xA;Limit to 1000 items.&#xA;Can also filter by Reference (Filter is StartsWith)&#xD;&#xA;INPUTS:&#xD;&#xA;- QueueName: String with the full QueueName&#xD;&#xA;- Key: String, Key to filter by&#xD;&#xA;- Value: String, Value to filter by&#xD;&#xA;- Reference (optional): References of the queue items (Can be empty)&#xD;&#xA;&#xA;OUTPUTS:&#xD;&#xA;- QueueItems: List of QueueItems found&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="705,2015" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="jsonResponse" />
       <Variable x:TypeArguments="x:Int32" Name="intStatusCode" />
