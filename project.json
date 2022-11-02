@@ -3,9 +3,11 @@
   "description": "This library allows you to modify queue items in ways that the standard UIPath activities don't include by using the Orchestrator API",
   "main": "NewActivity.xaml",
   "dependencies": {
+    "Newtonsoft.Json": "13.0.1",
     "UiPath.System.Activities": "21.10.5",
     "UiPath.Testing.Activities": "22.4.3",
-    "UiPath.UIAutomation.Activities": "21.10.5"
+    "UiPath.UIAutomation.Activities": "21.10.5",
+    "UiPath.WebAPI.Activities": "1.13.2"
   },
   "webServices": [],
   "entitiesStores": [],
