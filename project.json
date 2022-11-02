@@ -44,7 +44,8 @@
         "__GetQueueItems_New.xaml",
         "__GetQueueItems_Retried.xaml",
         "__GetQueueItems_Successful.xaml",
-        "__GetQueueItems_All.xaml"
+        "__GetQueueItems_All.xaml",
+        "__GetQueueDefinitionId.xaml"
       ]
     },
     "processOptions": {
@@ -62,6 +63,16 @@
         "testCaseId": "2f458d8b-fbb3-4013-845d-71069eeb13c8",
         "dataVariationFilePath": ".variations\\Get All Queue Items_TestData_Sheet1.json",
         "fileName": "TC_002_Get All Queue Items.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "6216a215-d64b-4a67-a4d3-52e0f4c24726",
+        "fileName": "TC_003_GetQueueItemsByProgress.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "0915070d-80e8-4893-8460-c9b1495fe328",
+        "fileName": "TC_004_GetQueueItemsBySpecificData.xaml"
       }
     ],
     "modernBehavior": true
