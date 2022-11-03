@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1211,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1228,827</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TC_003_GetQueueItemsByProgress_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -104,8 +104,8 @@
           <InArgument x:TypeArguments="x:String" x:Key="Key">
             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Key" />
           </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="Value">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Value" />
+          <InArgument x:TypeArguments="x:Object" x:Key="Value">
+            <mva:VisualBasicValue x:TypeArguments="x:Object" ExpressionText="Value" />
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>

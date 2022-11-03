@@ -13,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.6.0",
-  "projectVersion": "1.0.1",
+  "projectVersion": "1.0.2",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -45,7 +45,8 @@
         "__GetQueueItems_Retried.xaml",
         "__GetQueueItems_Successful.xaml",
         "__GetQueueItems_All.xaml",
-        "__GetQueueDefinitionId.xaml"
+        "__GetQueueDefinitionId.xaml",
+        "__SerializeKeyValuePairFilter.xaml"
       ]
     },
     "processOptions": {
