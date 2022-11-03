@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1272,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1190,827</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TC_002_Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -95,7 +95,9 @@
           <InArgument x:TypeArguments="x:String" x:Key="FolderPath">
             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="QueueFolder" />
           </InArgument>
-          <InArgument x:TypeArguments="ui:QueueItemStatus[]" x:Key="QueueItemStates" />
+          <InArgument x:TypeArguments="ui:QueueItemStatus[]" x:Key="QueueItemStates">
+            <mva:VisualBasicValue x:TypeArguments="ui:QueueItemStatus[]" ExpressionText="{}{QueueItemStatus.Successful, QueueItemStatus.Failed}" />
+          </InArgument>
           <OutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="QueueItems">
             <mva:VisualBasicReference x:TypeArguments="scg:List(ui:QueueItem)" ExpressionText="qItems" />
           </OutArgument>
@@ -108,7 +110,9 @@
           <InArgument x:TypeArguments="x:Boolean" x:Key="Continue_OnError">
             <Literal x:TypeArguments="x:Boolean" />
           </InArgument>
-          <InArgument x:TypeArguments="ui:QueueItemPriority[]" x:Key="Priorities" />
+          <InArgument x:TypeArguments="ui:QueueItemPriority[]" x:Key="Priorities">
+            <mva:VisualBasicValue x:TypeArguments="ui:QueueItemPriority[]" ExpressionText="{}{QueueItemPriority.Normal, QueueItemPriority.High}" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>

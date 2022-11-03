@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1272,3571</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1190,2830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -90,7 +90,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Bypasses the 100 limit when using a &quot;Get Queue Items&quot; activity by doing it until no more results are available. Limited to 10 000 items for each Status to prevent API dropouts&#xA;ARGUMENTS:&#xA;Same as &quot;Get Queue Items&quot; Activity, but Status and Priority must be passed as objects:&#xA;EXAMPLE: {QueueItemStatus.Successful, QueueItemStatus.Failed} -&gt; Will default to &quot;All&quot; if it's left empty&#xA;QueueItemPriority.High -&gt; Will default to &quot;Normal&quot; if it's left Empty&#xA;&#xA;" DisplayName="Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="705,3506" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Bypasses the 100 limit when using Get Queue Items. Limited to 10 000 items to prevent API dropouts&#xA;ARGUMENTS:&#xA;Same as &quot;Get Queue Items&quot; Activity, but Status and Priority must be passed as objects:&#xA;EXAMPLE: {QueueItemStatus.Successful, QueueItemStatus.Failed} -&gt; Will default to &quot;All&quot; if it's left empty&#xA;{QueueItemPriority.High} -&gt; Will default to &quot;All&quot; if left empty&#xA;&#xA;" DisplayName="Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="705,2765" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
       <Variable x:TypeArguments="x:Int32" Name="intStatusCode" />
@@ -102,7 +102,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="CURL Example:&#xA;&#xA;curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20192%20and%20Progress%20eq%20'Prueba1'%20and%20startswith(Reference%2C'Test')&amp;%24top=1000&quot; -H  &quot;accept: application/json&quot;" DisplayName="API CALL" sap:VirtualizedContainerService.HintSize="663,2702" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence sap2010:Annotation.AnnotationText="CURL Example:&#xA;&#xA;curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20192%20and%20Progress%20eq%20'Prueba1'%20and%20startswith(Reference%2C'Test')&amp;%24top=1000&quot; -H  &quot;accept: application/json&quot;" DisplayName="API CALL" sap:VirtualizedContainerService.HintSize="663,1976" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strEndpointFormat" />
         <Variable x:TypeArguments="x:String" Default="/odata/QueueItems/?" Name="strEndpointBase" />
@@ -116,7 +116,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="__GetQueueDefinitionId.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Queue Definition ID" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="__GetQueueDefinitionId.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="QueueName">[QueueName]</InArgument>
           <OutArgument x:TypeArguments="x:Int32" x:Key="QueueId">[queueId]</OutArgument>
@@ -227,7 +227,7 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <Sequence sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_21">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -236,10 +236,10 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[FilterTop = 0]" DisplayName="If No TOP, default to 10 000" sap:VirtualizedContainerService.HintSize="484,339" sap2010:WorkflowViewState.IdRef="If_5">
+      <If Condition="[FilterTop = 0]" DisplayName="If No TOP, default to 10 000" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -270,20 +270,74 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[Not IsNothing(QueueItemStates)]" DisplayName="If States, add (IN)" sap:VirtualizedContainerService.HintSize="484,270" sap2010:WorkflowViewState.IdRef="If_4">
+      <If Condition="[Not IsNothing(QueueItemStates)]" DisplayName="If States, add (IN queue item states)" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strListOfStates" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strListOfStates]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ForEach x:TypeArguments="ui:QueueItemStatus" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,276" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[QueueItemStates]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="ui:QueueItemStatus">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:QueueItemStatus" Name="item" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Concatenate" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[strListOfStates]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">[strListOfStates + "'" +  item.ToString + "'" + ","]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+            <Assign DisplayName="Remove last comma" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strListOfStates]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Left(strListOfStates, strListOfStates.Length - 1)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Concatenate Endpoint" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strEndpointFormat]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[strEndpointFormat + " and Status in (" + strListOfStates + ")"]</InArgument>
+              </Assign.Value>
+            </Assign>
           </Sequence>
         </If.Then>
         <If.Else>
@@ -296,20 +350,74 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[IsNothing(Priorities)]" DisplayName="If Priorities, Add them" sap:VirtualizedContainerService.HintSize="484,270" sap2010:WorkflowViewState.IdRef="If_3">
+      <If Condition="[Not IsNothing(Priorities)]" DisplayName="If Priorities, Add them" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence sap:VirtualizedContainerService.HintSize="476,668" sap2010:WorkflowViewState.IdRef="Sequence_25">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strListOfPriorities" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign Initialize List Of Priorites" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strListOfPriorities]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ForEach x:TypeArguments="ui:QueueItemPriority" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,276" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Priorities]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="ui:QueueItemPriority">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:QueueItemPriority" Name="item" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Concatenate" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[strListOfPriorities]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">[strListOfPriorities + "'" +  item.ToString + "'" + ","]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+            <Assign DisplayName="Remove last comma" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strListOfPriorities]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Left(strListOfPriorities, strListOfPriorities.Length - 1)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Concatenate Endpoint" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strEndpointFormat]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[strEndpointFormat + " and Priority in (" + strListOfPriorities + ")"]</InArgument>
+              </Assign.Value>
+            </Assign>
           </Sequence>
         </If.Then>
         <If.Else>
