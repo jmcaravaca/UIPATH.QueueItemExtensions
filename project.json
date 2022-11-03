@@ -13,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.6.0",
-  "projectVersion": "1.0.2",
+  "projectVersion": "1.1.0",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -38,7 +38,8 @@
       "privateWorkflows": [
         "__AddItem.xaml",
         "__GetQueueDefinitionId.xaml",
-        "__SerializeKeyValuePairFilter.xaml"
+        "__SerializeKeyValuePairFilter.xaml",
+        "__GetOrchestratorFolderId.xaml"
       ]
     },
     "processOptions": {
