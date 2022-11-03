@@ -37,14 +37,6 @@
       "includeOriginalXaml": false,
       "privateWorkflows": [
         "__AddItem.xaml",
-        "__GetQueueItems_Abandoned.xaml",
-        "__GetQueueItems_Deleted.xaml",
-        "__GetQueueItems_Failed.xaml",
-        "__GetQueueItems_InProgress.xaml",
-        "__GetQueueItems_New.xaml",
-        "__GetQueueItems_Retried.xaml",
-        "__GetQueueItems_Successful.xaml",
-        "__GetQueueItems_All.xaml",
         "__GetQueueDefinitionId.xaml",
         "__SerializeKeyValuePairFilter.xaml"
       ]

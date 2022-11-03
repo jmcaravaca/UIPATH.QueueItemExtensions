@@ -89,9 +89,6 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Get All Queue Items workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Get All Queue Items.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:Int32" x:Key="TimeoutMS">
-            <Literal x:TypeArguments="x:Int32" Value="30000" />
-          </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="QueueName">
             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="QueueName" />
           </InArgument>
@@ -102,12 +99,8 @@
           <OutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="QueueItems">
             <mva:VisualBasicReference x:TypeArguments="scg:List(ui:QueueItem)" ExpressionText="qItems" />
           </OutArgument>
-          <InArgument x:TypeArguments="s:DateTime" x:Key="FilterTo">
-            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="Now" />
-          </InArgument>
-          <InArgument x:TypeArguments="s:DateTime" x:Key="FilterFrom">
-            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="Now.AddDays(-14)" />
-          </InArgument>
+          <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterTo" />
+          <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterFrom" />
           <InArgument x:TypeArguments="x:String" x:Key="Reference" />
           <InArgument x:TypeArguments="x:Int32" x:Key="FilterTop">
             <Literal x:TypeArguments="x:Int32" Value="50" />
