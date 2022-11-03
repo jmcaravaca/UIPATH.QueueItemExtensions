@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1211,1772</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1228,1800</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -78,7 +78,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Filter Queue Items by &quot;Progress&quot;: Returns a List&lt;QueueItem&gt; with all the QueueItems where &quot;Progress&quot; is set to the specified string.&#xA;Limit to 1000 items.&#xA;Can also filter by Reference (Filter is StartsWith)&#xD;&#xA;INPUTS:&#xD;&#xA;- QueueName: String with the full QueueName&#xD;&#xA;- Progress: String to be filtered by. Cannot filter on empty Progress&#xD;&#xA;- Reference (optional): References of the queue items (Can be empty)&#xA;OUTPUTS:&#xD;&#xA;- QueueItems: List of QueueItems found&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="705,1707" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Filter Queue Items by &quot;Progress&quot;: Returns a List&lt;QueueItem&gt; with all the QueueItems where &quot;Progress&quot; is set to the specified string.&#xA;Limit to 1000 items.&#xA;Can also filter by Reference (Filter is StartsWith)&#xA;INPUTS:&#xA;- QueueName: String with the full QueueName&#xA;- Progress: String to be filtered by. Cannot filter on empty Progress&#xA;- Reference (optional): References of the queue items (Can be empty)&#xA;OUTPUTS:&#xA;- QueueItems: List of QueueItems found&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="705,1735" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="jsonResponse" />
       <Variable x:TypeArguments="x:Int32" Name="intStatusCode" />
@@ -156,7 +156,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <Sequence sap2010:Annotation.AnnotationText="CURL Example:&#xA;&#xA;curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20192%20and%20Progress%20eq%20'Prueba1'%20and%20startswith(Reference%2C'Test')&amp;%24top=1000&quot; -H  &quot;accept: application/json&quot;" DisplayName="API CALL" sap:VirtualizedContainerService.HintSize="663,553" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence sap2010:Annotation.AnnotationText="CURL Example:&#xA;&#xA;curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20192%20and%20Progress%20eq%20'Prueba1'%20and%20startswith(Reference%2C'Test')&amp;%24top=1000&quot; -H  &quot;accept: application/json&quot;" DisplayName="API CALL" sap:VirtualizedContainerService.HintSize="663,552" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strEndpointFormat" />
         <Variable x:TypeArguments="x:String" Default="/odata/QueueItems/?" Name="strEndpointBase" />
@@ -184,7 +184,7 @@
           <InArgument x:TypeArguments="x:String">[String.Format(strEndpointBase, CStr(queueId), Progress, Reference)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[strEndpointFormat]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[strEndpointFormat]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -194,9 +194,9 @@
       </ui:LogMessage>
       <ui:OrchestratorHttpRequest JSONPayload="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Orchestrator HTTP Request" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" Method="GET" RelativeEndpoint="[strEndpointFormat]" ResponseHeaders="[outHeaders]" Result="[jsonResponse]" StatusCode="[intStatusCode]" />
     </Sequence>
-    <If Condition="[intStatusCode = 200]" DisplayName="If Status OK" sap:VirtualizedContainerService.HintSize="663,511" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[intStatusCode = 200]" DisplayName="If Status OK" sap:VirtualizedContainerService.HintSize="663,540" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Then>
-        <Sequence DisplayName="Process Results" sap:VirtualizedContainerService.HintSize="376,351" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap2010:Annotation.AnnotationText="TODO Move to a different function" DisplayName="Process Results" sap:VirtualizedContainerService.HintSize="376,382" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="njl:JObject" Name="jsonDeser" />
             <Variable x:TypeArguments="ui:QueueItem" Name="qite" />
@@ -204,6 +204,7 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jsonDeser]" JsonString="[jsonResponse]" />

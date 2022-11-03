@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1211,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1272,827</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TC_002_Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -98,24 +98,24 @@
           <InArgument x:TypeArguments="x:String" x:Key="FolderPath">
             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="QueueFolder" />
           </InArgument>
-          <InArgument x:TypeArguments="s:Nullable(x:Int32)" x:Key="Duration" />
-          <InArgument x:TypeArguments="ui:QueueItemPriority" x:Key="Priority">
-            <mva:VisualBasicValue x:TypeArguments="ui:QueueItemPriority" ExpressionText="QueueItemPriority.Normal" />
-          </InArgument>
-          <InArgument x:TypeArguments="ui:QueueItemStatus[]" x:Key="QueueItemStates">
-            <mva:VisualBasicValue x:TypeArguments="ui:QueueItemStatus[]" ExpressionText="{}{}" />
-          </InArgument>
+          <InArgument x:TypeArguments="ui:QueueItemStatus[]" x:Key="QueueItemStates" />
           <OutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="QueueItems">
             <mva:VisualBasicReference x:TypeArguments="scg:List(ui:QueueItem)" ExpressionText="qItems" />
           </OutArgument>
-          <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterTo" />
-          <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterFrom" />
-          <InArgument x:TypeArguments="x:String" x:Key="FilterStrategy" />
+          <InArgument x:TypeArguments="s:DateTime" x:Key="FilterTo">
+            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="Now" />
+          </InArgument>
+          <InArgument x:TypeArguments="s:DateTime" x:Key="FilterFrom">
+            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="Now.AddDays(-14)" />
+          </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="Reference" />
-          <InArgument x:TypeArguments="x:Int32" x:Key="FilterTop" />
+          <InArgument x:TypeArguments="x:Int32" x:Key="FilterTop">
+            <Literal x:TypeArguments="x:Int32" Value="50" />
+          </InArgument>
           <InArgument x:TypeArguments="x:Boolean" x:Key="Continue_OnError">
             <Literal x:TypeArguments="x:Boolean" />
           </InArgument>
+          <InArgument x:TypeArguments="ui:QueueItemPriority[]" x:Key="Priorities" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
