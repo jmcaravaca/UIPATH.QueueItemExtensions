@@ -3,11 +3,12 @@
     <x:Property Name="QueueName" Type="InArgument(x:String)" />
     <x:Property Name="Progress" Type="InArgument(x:String)" />
     <x:Property Name="Reference" Type="InArgument(x:String)" />
+    <x:Property Name="OrchestratorFolderPath" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1211,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1190,827</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TC_003_GetQueueItemsByProgress_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -63,8 +64,8 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="TC_003_GetQueueItemsByProgress" sap:VirtualizedContainerService.HintSize="418,642" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -102,6 +103,9 @@
           </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="Progress">
             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Progress" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="OrchestratorFolderPath">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="OrchestratorFolderPath" />
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>

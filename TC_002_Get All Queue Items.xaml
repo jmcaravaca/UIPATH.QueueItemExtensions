@@ -1,7 +1,7 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TC_002_Get_All_Queue_Items" this:TC_002_Get_All_Queue_Items.QueueName="Redes-008_ITSM_JAM" this:TC_002_Get_All_Queue_Items.QueueFolder="Tech/REDES" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TC_002_Get_All_Queue_Items" this:TC_002_Get_All_Queue_Items.QueueName="Redes-008_ITSM_JAM" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="QueueName" Type="InArgument(x:String)" />
-    <x:Property Name="QueueFolder" Type="InArgument(x:String)" />
+    <x:Property Name="OrchestratorFolderPath" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -92,9 +92,6 @@
           <InArgument x:TypeArguments="x:String" x:Key="QueueName">
             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="QueueName" />
           </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="FolderPath">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="QueueFolder" />
-          </InArgument>
           <InArgument x:TypeArguments="ui:QueueItemStatus[]" x:Key="QueueItemStates">
             <mva:VisualBasicValue x:TypeArguments="ui:QueueItemStatus[]" ExpressionText="{}{QueueItemStatus.Successful, QueueItemStatus.Failed}" />
           </InArgument>
@@ -112,6 +109,9 @@
           </InArgument>
           <InArgument x:TypeArguments="ui:QueueItemPriority[]" x:Key="Priorities">
             <mva:VisualBasicValue x:TypeArguments="ui:QueueItemPriority[]" ExpressionText="{}{QueueItemPriority.Normal, QueueItemPriority.High}" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="OrchestratorFolderPath">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="OrchestratorFolderPath" />
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>

@@ -4,11 +4,15 @@
     <x:Property Name="Reference" Type="InArgument(x:String)" />
     <x:Property Name="Key" Type="InArgument(x:String)" />
     <x:Property Name="Value" Type="InArgument(x:String)" />
+    <x:Property Name="OrchestratorFolderPath" Type="InArgument(x:String)" />
   </x:Members>
+  <this:TC_003_GetQueueItemsByProgress.OrchestratorFolderPath>
+    <InArgument x:TypeArguments="x:String" />
+  </this:TC_003_GetQueueItemsByProgress.OrchestratorFolderPath>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1228,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1190,827</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TC_003_GetQueueItemsByProgress_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -106,6 +110,9 @@
           </InArgument>
           <InArgument x:TypeArguments="x:Object" x:Key="Value">
             <mva:VisualBasicValue x:TypeArguments="x:Object" ExpressionText="Value" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="OrchestratorFolderPath">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="OrchestratorFolderPath" />
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>

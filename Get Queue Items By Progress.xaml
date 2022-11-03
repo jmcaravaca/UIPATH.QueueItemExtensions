@@ -4,11 +4,12 @@
     <x:Property Name="QueueItems" Type="OutArgument(scg:List(ui:QueueItem))" />
     <x:Property Name="Reference" Type="InArgument(x:String)" />
     <x:Property Name="Progress" Type="InArgument(x:String)" />
+    <x:Property Name="OrchestratorFolderPath" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1228,1800</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1190,1800</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -48,7 +49,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -76,6 +77,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Filter Queue Items by &quot;Progress&quot;: Returns a List&lt;QueueItem&gt; with all the QueueItems where &quot;Progress&quot; is set to the specified string.&#xA;Limit to 1000 items.&#xA;Can also filter by Reference (Filter is StartsWith)&#xA;INPUTS:&#xA;- QueueName: String with the full QueueName&#xA;- Progress: String to be filtered by. Cannot filter on empty Progress&#xA;- Reference (optional): References of the queue items (Can be empty)&#xA;OUTPUTS:&#xA;- QueueItems: List of QueueItems found&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="705,1735" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -146,8 +148,15 @@
     </If>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetQueueDefinitionId workflow" sap:VirtualizedContainerService.HintSize="663,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="__GetQueueDefinitionId.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="QueueName">[QueueName]</InArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="QueueId">[queueId]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="QueueName">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="QueueName" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="QueueId">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="queueId" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="OrchestratorFolderPath">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="OrchestratorFolderPath" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -192,7 +201,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:OrchestratorHttpRequest JSONPayload="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Orchestrator HTTP Request" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" Method="GET" RelativeEndpoint="[strEndpointFormat]" ResponseHeaders="[outHeaders]" Result="[jsonResponse]" StatusCode="[intStatusCode]" />
+      <ui:OrchestratorHttpRequest JSONPayload="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Orchestrator HTTP Request" FolderPath="[OrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" Method="GET" RelativeEndpoint="[strEndpointFormat]" ResponseHeaders="[outHeaders]" Result="[jsonResponse]" StatusCode="[intStatusCode]" />
     </Sequence>
     <If Condition="[intStatusCode = 200]" DisplayName="If Status OK" sap:VirtualizedContainerService.HintSize="663,540" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Then>

@@ -5,11 +5,12 @@
     <x:Property Name="Data3" Type="InArgument(x:String)" />
     <x:Property Name="Priority" Type="InArgument(x:String)" />
     <x:Property Name="Force" Type="InArgument(x:Boolean)" />
+    <x:Property Name="OrchestratorFolderPath" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1089,964</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1190,964</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TestCase_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -67,6 +68,7 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="TODO: Fix this test case" DisplayName="TestCase" sap:VirtualizedContainerService.HintSize="515,899" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -142,9 +144,15 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Update Queue Item Data workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Update Queue Item Data.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:Boolean" x:Key="Force">[Force]</InArgument>
-          <InOutArgument x:TypeArguments="ui:QueueItem" x:Key="TransactionItem">[TItem]</InOutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="QueueFolder">[QueueFolder]</InArgument>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="Force">
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Force" />
+          </InArgument>
+          <InOutArgument x:TypeArguments="ui:QueueItem" x:Key="TransactionItem">
+            <mva:VisualBasicReference x:TypeArguments="ui:QueueItem" ExpressionText="TItem" />
+          </InOutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="OrchestratorFolderPath">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="OrchestratorFolderPath" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
