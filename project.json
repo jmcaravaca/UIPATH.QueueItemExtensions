@@ -13,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.6.0",
-  "projectVersion": "1.1.1",
+  "projectVersion": "1.1.2",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -72,6 +72,11 @@
         "editingStatus": "InProgress",
         "testCaseId": "46a09714-e6d1-4767-9122-5c2a317bdba1",
         "fileName": "TC_005_GetQueueRetries.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "d5c15706-69b8-4bb9-870a-7ae7b4280b1f",
+        "fileName": "TC_006_Get QueueItem End Processing Time.xaml"
       }
     ],
     "modernBehavior": true
