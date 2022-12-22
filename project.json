@@ -4,7 +4,7 @@
   "main": "NewActivity.xaml",
   "dependencies": {
     "Newtonsoft.Json": "13.0.1",
-    "UiPath.System.Activities": "21.10.5",
+    "UiPath.System.Activities": "22.4.1",
     "UiPath.Testing.Activities": "22.4.3",
     "UiPath.UIAutomation.Activities": "21.10.5",
     "UiPath.WebAPI.Activities": "1.13.2"
@@ -13,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.6.0",
-  "projectVersion": "1.1.0",
+  "projectVersion": "1.1.1",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -67,6 +67,11 @@
         "editingStatus": "InProgress",
         "testCaseId": "0915070d-80e8-4893-8460-c9b1495fe328",
         "fileName": "TC_004_GetQueueItemsBySpecificData.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "46a09714-e6d1-4767-9122-5c2a317bdba1",
+        "fileName": "TC_005_GetQueueRetries.xaml"
       }
     ],
     "modernBehavior": true
