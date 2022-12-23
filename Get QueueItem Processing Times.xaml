@@ -3,11 +3,12 @@
     <x:Property Name="QueueItem" Type="InArgument(ui:QueueItem)" />
     <x:Property Name="StartProcessing" Type="OutArgument(s:Nullable(s:DateTime))" />
     <x:Property Name="EndProcessing" Type="OutArgument(s:Nullable(s:DateTime))" />
+    <x:Property Name="TotalProcessingSeconds" Type="OutArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>997,1797</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>997,2058</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -78,7 +79,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Returns the Start and End Processing Time for the specified queue Item&#xA;INPUTS:&#xA;- QueueItem: Queue Item&#xA;&#xA;OUTPUTS:&#xA;- EndProcessing: Datetime the item was finished on. Will return null if it hasn't been finished yet&#xD;&#xA;- StartProcessing: Datetime the item was startedon. Will return null if it hasn't been started yet&#xA;" DisplayName="Get Queue Retries" sap:VirtualizedContainerService.HintSize="747,1732" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Returns the Start and End Processing Time for the specified queue Item&#xA;INPUTS:&#xA;- QueueItem: Queue Item&#xA;&#xA;OUTPUTS:&#xA;- EndProcessing: Datetime the item was finished on. Will return null if it hasn't been finished yet&#xA;- StartProcessing: Datetime the item was startedon. Will return null if it hasn't been started yet&#xD;&#xA;- TotalProcessingSeconds: &#xA;" DisplayName="Get Queue Retries" sap:VirtualizedContainerService.HintSize="747,1993" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -112,18 +113,14 @@
         </Sequence>
       </If.Else>
     </If>
-    <Sequence sap2010:Annotation.AnnotationText="curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems(22242)?%24select=EndProcessing&quot; -H  &quot;accept: application/json&quot; -H  &quot;X-UIPATH-OrganizationUnitId: 11&quot;" DisplayName="API Call" sap:VirtualizedContainerService.HintSize="705,1167" sap2010:WorkflowViewState.IdRef="Sequence_19">
+    <Sequence sap2010:Annotation.AnnotationText="curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems(22242)?%24select=EndProcessing,StartProcessing,SecondsInPreviousAttempts&quot; -H  &quot;accept: application/json&quot; -H  &quot;X-UIPATH-OrganizationUnitId: 11&quot;" DisplayName="API Call" sap:VirtualizedContainerService.HintSize="705,1413" sap2010:WorkflowViewState.IdRef="Sequence_19">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Default="/odata/QueueDefinitions?%24filter=Name%20eq%20'BO-Procesos-002_RepetidoresFSM'&amp;%24top=1" Name="strEndpointBase" />
         <Variable x:TypeArguments="x:String" Name="strEndPointFormatted" />
         <Variable x:TypeArguments="x:String" Name="jsonResponse" />
         <Variable x:TypeArguments="x:Int32" Name="intStatusCode" />
         <Variable x:TypeArguments="x:Int32" Name="intFolderID" />
-        <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="HeadersDict">
-          <Variable.Default>
-            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="New Dictionary (Of String, String)" />
-          </Variable.Default>
-        </Variable>
+        <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[New Dictionary (Of String, String)]" Name="HeadersDict" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -136,7 +133,7 @@
           <OutArgument x:TypeArguments="x:String">[strEndpointBase]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">["/odata/QueueItems({0})?%24select=EndProcessing,StartProcessing"]</InArgument>
+          <InArgument x:TypeArguments="x:String">["/odata/QueueItems({0})?%24select=EndProcessing,StartProcessing,SecondsInPreviousAttempts"]</InArgument>
         </Assign.Value>
       </Assign>
       <Assign sap:VirtualizedContainerService.HintSize="663,60" sap2010:WorkflowViewState.IdRef="Assign_8">
@@ -148,9 +145,9 @@
         </Assign.Value>
       </Assign>
       <ui:OrchestratorHttpRequest JSONPayload="{x:Null}" ResponseHeaders="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Orchestrator HTTP Request" sap:VirtualizedContainerService.HintSize="663,22" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_2" Method="GET" RelativeEndpoint="[strEndPointFormatted]" Result="[jsonResponse]" StatusCode="[intStatusCode]" />
-      <If Condition="[intStatusCode  = 200]" DisplayName="If Status OK" sap:VirtualizedContainerService.HintSize="663,771" sap2010:WorkflowViewState.IdRef="If_6">
+      <If Condition="[intStatusCode  = 200]" DisplayName="If Status OK" sap:VirtualizedContainerService.HintSize="663,1002" sap2010:WorkflowViewState.IdRef="If_6">
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,613" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <Sequence sap:VirtualizedContainerService.HintSize="376,844" sap2010:WorkflowViewState.IdRef="Sequence_17">
             <Sequence.Variables>
               <Variable x:TypeArguments="njl:JObject" Name="jsonDeser" />
             </Sequence.Variables>
@@ -176,8 +173,17 @@
                 <InArgument x:TypeArguments="s:Nullable(s:DateTime)">[CType(jsonDeser("StartProcessing"), Nullable(Of DateTime))]</InArgument>
               </Assign.Value>
             </Assign>
+            <Assign DisplayName="Assign Output" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[TotalProcessingSeconds]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[CInt(jsonDeser("SecondsInPreviousAttempts"))]</InArgument>
+              </Assign.Value>
+            </Assign>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[EndProcessing]" />
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[StartProcessing]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[TotalProcessingSeconds.ToString]" />
           </Sequence>
         </If.Then>
         <If.Else>
