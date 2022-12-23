@@ -13,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.6.0",
-  "projectVersion": "2.0.0",
+  "projectVersion": "2.1.0",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -83,6 +83,16 @@
         "editingStatus": "InProgress",
         "testCaseId": "4113e486-c04b-4959-927a-91560e105fa2",
         "fileName": "TC_007_GetBasicItemsBySpecificData.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "23ea6f30-53d2-44d8-90c9-34e8175b2aca",
+        "fileName": "TC_008_GetOldestQueueItemByReference.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "97484bb1-09e4-4cb9-a418-0b77929316d0",
+        "fileName": "TC_009_GetNewestQueueItemByReference.xaml"
       }
     ],
     "modernBehavior": true
@@ -90,6 +100,8 @@
   "expressionLanguage": "VisualBasic",
   "isTemplate": false,
   "templateProjectData": {},
-  "publishData": {},
+  "publishData": {
+    "iconUrl": ".package/images.jpg"
+  },
   "targetFramework": "Legacy"
 }
