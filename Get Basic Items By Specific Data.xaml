@@ -82,7 +82,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Filter Queue Items by &quot;Specific Data&quot;: Returns a List&lt;QueueItem&gt; with all the QueueItems where the Key-Value pair exists in the Specific Content.&#xA;Limit to 1000 items.&#xA;Can also filter by Reference (Filter is StartsWith)&#xA;INPUTS:&#xA;- QueueName: String with the full QueueName&#xA;- Key: String, Key to filter by&#xA;- Value: Object, Value to filter by&#xA;- Reference (optional): References of the queue items (Can be empty)&#xD;&#xA;- Top (optional): Number of items to retrieve. If left empty it will default to 1000&#xA;&#xA;OUTPUTS:&#xA;- QueueItems: List of QueueItems found&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="875,2391" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This activity is similar to &quot;Get Queue items By Specific Data&quot; but the queue items returned will ONLY have their Status and Reference (everything else is null)-&gt; This will make queries faster for large amounts of items&#xA;Can also filter by Reference (Filter is StartsWith)&#xA;INPUTS:&#xA;- QueueName: String with the full QueueName&#xA;- Key: String, Key to filter by&#xA;- Value: Object, Value to filter by&#xA;- Reference (optional): References of the queue items (Can be empty)&#xA;- Top (optional): Number of items to retrieve. If left empty it will default to 1000&#xA;&#xA;OUTPUTS:&#xA;- QueueItems: List of QueueItems found&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="875,2391" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="jsonResponse" />
       <Variable x:TypeArguments="x:Int32" Name="intStatusCode" />
@@ -230,7 +230,7 @@
           <InArgument x:TypeArguments="x:String" xml:space="preserve">["/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20{0}%20and" + _
 "%20startswith(Reference%2C'{1}')%20and" + _
 "%20contains(SpecificData%2C%20'{2}')" + _
-"&amp;%24select=Status,SpecificContent,RetryNumber,Id,Key,QueueDefinitionId,ReviewerUserId,Priority,Reference,RowVersion,ProcessingException,StartProcessing,ReviewStatus,Progress,Output,DueDate,DeferDate"  + _
+"&amp;%24select=Status,Reference"  + _
 "&amp;%24top={3}"]</InArgument>
         </Assign.Value>
       </Assign>
