@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1148,2616</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1121,2616</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -77,7 +77,6 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Returns the oldest queue item that matches the Reference given. Filter is StartsWith&#xA;INPUTS:&#xA;- QueueName: String with the full QueueName&#xA;- OrchestratorFolderPath: full path of the orchstrator folder&#xA;- Reference (optional): References of the queue items (Can be empty)&#xA;- EndTime: By default, the sorting is done by CreationTime. Set EndTime to True to sort by &quot;EndProcessingTime&quot;. NOTE: This might lead to unexpected results if there are items that haven't been processed yet.&#xA;&#xA;&#xA;OUTPUTS:&#xA;- QueueItems: List of QueueItems found&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="705,2551" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -154,7 +153,7 @@
             <OutArgument x:TypeArguments="x:String">[sortType]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">EndProcessingTime</InArgument>
+            <InArgument x:TypeArguments="x:String">EndProcessing</InArgument>
           </Assign.Value>
         </Assign>
       </If.Then>
@@ -201,7 +200,7 @@
         </Assign.To>
         <Assign.Value>
           <InArgument x:TypeArguments="x:String" xml:space="preserve">["/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20{0}%20and" + _
-"%20startswith(Reference%2C'{1}')" + _
+"%20startswith(Reference%2C'{1}') and {2} ne null" + _
 "&amp;%24orderby={2}%20asc" + _ 
 "&amp;%24select=Status,SpecificContent,RetryNumber,Id,Key,QueueDefinitionId,ReviewerUserId,Priority,Reference,RowVersion,ProcessingException,StartProcessing,ReviewStatus,Progress,Output,DueDate,DeferDate"  + _
 "&amp;%24top=1"]</InArgument>
