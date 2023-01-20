@@ -93,6 +93,12 @@
         "editingStatus": "InProgress",
         "testCaseId": "97484bb1-09e4-4cb9-a418-0b77929316d0",
         "fileName": "TC_009_GetNewestQueueItemByReference.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "80187d0e-7f43-4e53-b7f5-b967d4b5c36a",
+        "dataVariationFilePath": ".variations\\TestDataTC_010_Sheet1.json",
+        "fileName": "TC_010_Get Datatable From QueueItems.xaml"
       }
     ],
     "modernBehavior": true
