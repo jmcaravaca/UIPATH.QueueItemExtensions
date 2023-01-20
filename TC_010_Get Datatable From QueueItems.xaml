@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1093,1045</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>827,1045</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TC_010_Get_Datatable_From_QueueItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -70,7 +70,6 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="TC_010_Get_Datatable_From_QueueItems" sap:VirtualizedContainerService.HintSize="418,980" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -99,18 +98,10 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Get Datatable From QueueItems workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Get Datatable From QueueItems.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="TransactionItems">
-            <mva:VisualBasicValue x:TypeArguments="scg:List(ui:QueueItem)" ExpressionText="qitems.ToList" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:Boolean" x:Key="UseSpecificContent">
-            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="usespecificcontent" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:Boolean" x:Key="UseOutput">
-            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="useoutput" />
-          </InArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="DatatableItems">
-            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtItems" />
-          </OutArgument>
+          <InArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="TransactionItems">[qitems.ToList]</InArgument>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="UseSpecificContent">[usespecificcontent]</InArgument>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="UseOutput">[useoutput]</InArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="DatatableItems">[dtItems]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
