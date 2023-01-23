@@ -13,6 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
+  <sap2010:Annotation.AnnotationText>UPTF000002C8eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiUmV0dXJucyB3aGV0aGVyIHRoZXJlIGFyZSBhbnkgXCJwZW5kaW5nXCIgaXRlbXMgaW4gdGhlIHF1ZXVlIChOZXcgYW5kIEluIFByb2dyZXNzKVx1MDAwYUlOUFVUUzpcdTAwMGEtIFF1ZXVlTmFtZTogU3RyaW5nIHdpdGggdGhlIGZ1bGwgUXVldWVOYW1lXHUwMDBhLSBPcmNoZXN0cmF0b3JGb2xkZXJQYXRoOiBGb2xkZXIgd2hlcmUgdGhlIFF1ZXVlIGlzIGxvY2F0ZWQuIElmIGxlZnQgZW1wdHksIGl0IHdpbGwgdXNlIHRoZSBjdXJyZW50IGZvbGRlclx1MDAwYS0gUmVmZXJlbmNlIChvcHRpb25hbCk6IFJlZmVyZW5jZSB0byBmaWx0ZXIgdGhlIGl0ZW1zIChTdGFydHNXaXRoKVx1MDAwYVx1MDAwYU9VVFBVVFM6XHUwMDBhLSBFeGlzdDogIEJvb2wgLT4gVHJ1ZSBpZiB0aGVyZSBhcmUgYW55IGl0ZW1zIGxlZnQgdG8gcHJvY2VzcyBpbiB0aGUgcXVldWVcdTAwMGEiLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap:VirtualizedContainerService.HintSize>1093,2091</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Exist_Pending_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -83,7 +84,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Returns whether there are any &quot;pending&quot; items in the queue (New and In Progress)&#xD;&#xA;INPUTS:&#xD;&#xA;- QueueName: String with the full QueueName&#xD;&#xA;- OrchestratorFolderPath: Folder where the Queue is located. If left empty, it will use the current folder&#xD;&#xA;- Reference (optional): Reference to filter the items (StartsWith)&#xD;&#xA;&#xD;&#xA;OUTPUTS:&#xD;&#xA;- Exist:  Bool -&gt; True if there are any items left to process in the queue&#xD;&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="940,2026" sap2010:WorkflowViewState.IdRef="Sequence_11">
+  <Sequence sap2010:Annotation.AnnotationText="Returns whether there are any &quot;pending&quot; items in the queue (New and In Progress)&#xA;INPUTS:&#xA;- QueueName: String with the full QueueName&#xA;- OrchestratorFolderPath: Folder where the Queue is located. If left empty, it will use the current folder&#xA;- Reference (optional): Reference to filter the items (StartsWith)&#xA;&#xA;OUTPUTS:&#xA;- Exist:  Bool -&gt; True if there are any items left to process in the queue&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="940,2026" sap2010:WorkflowViewState.IdRef="Sequence_11">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="jsonResponse" />
       <Variable x:TypeArguments="x:Int32" Name="intStatusCode" />

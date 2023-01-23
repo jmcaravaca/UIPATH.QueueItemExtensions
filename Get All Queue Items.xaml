@@ -14,6 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
+  <sap2010:Annotation.AnnotationText>UPTF000002A0eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiQnlwYXNzZXMgdGhlIDEwMCBsaW1pdCB3aGVuIHVzaW5nIEdldCBRdWV1ZSBJdGVtcy4gTGltaXRlZCB0byAxMCAwMDAgaXRlbXMgdG8gcHJldmVudCBBUEkgZHJvcG91dHNcdTAwMGFBUkdVTUVOVFM6XHUwMDBhU2FtZSBhcyBcIkdldCBRdWV1ZSBJdGVtc1wiIEFjdGl2aXR5LCBidXQgU3RhdHVzIGFuZCBQcmlvcml0eSBtdXN0IGJlIHBhc3NlZCBhcyBvYmplY3RzOlx1MDAwYUVYQU1QTEU6IHtRdWV1ZUl0ZW1TdGF0dXMuU3VjY2Vzc2Z1bCwgUXVldWVJdGVtU3RhdHVzLkZhaWxlZH0gLT4gV2lsbCBkZWZhdWx0IHRvIFwiQWxsXCIgaWYgaXQncyBsZWZ0IGVtcHR5XHUwMDBhe1F1ZXVlSXRlbVByaW9yaXR5LkhpZ2h9IC0+IFdpbGwgZGVmYXVsdCB0byBcIkFsbFwiIGlmIGxlZnQgZW1wdHlcdTAwMGFcdTAwMGEiLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap:VirtualizedContainerService.HintSize>997,3770</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -468,12 +469,8 @@
       <If.Then>
         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke __DeserializeQueueItems workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="__DeserializeQueueItems.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="jsonResponse">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonResponse" />
-            </InArgument>
-            <OutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="QueueItems">
-              <mva:VisualBasicReference x:TypeArguments="scg:List(ui:QueueItem)" ExpressionText="QueueItems" />
-            </OutArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="jsonResponse">[jsonResponse]</InArgument>
+            <OutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="QueueItems">[QueueItems]</OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </If.Then>

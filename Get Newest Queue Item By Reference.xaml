@@ -9,6 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
+  <sap2010:Annotation.AnnotationText>UPTF0000033CeyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiUmV0dXJucyB0aGUgbmV3ZXN0IHF1ZXVlIGl0ZW0gdGhhdCBtYXRjaGVzIHRoZSBSZWZlcmVuY2UgZ2l2ZW4uIEZpbHRlciBpcyBTdGFydHNXaXRoXHUwMDBkXHUwMDBhSU5QVVRTOlx1MDAwZFx1MDAwYS0gUXVldWVOYW1lOiBTdHJpbmcgd2l0aCB0aGUgZnVsbCBRdWV1ZU5hbWVcdTAwMGRcdTAwMGEtIE9yY2hlc3RyYXRvckZvbGRlclBhdGg6IGZ1bGwgcGF0aCBvZiB0aGUgb3JjaHN0cmF0b3IgZm9sZGVyXHUwMDBkXHUwMDBhLSBSZWZlcmVuY2UgKG9wdGlvbmFsKTogUmVmZXJlbmNlcyBvZiB0aGUgcXVldWUgaXRlbXMgKENhbiBiZSBlbXB0eSlcdTAwMGRcdTAwMGEtIEVuZFRpbWU6IEJ5IGRlZmF1bHQsIHRoZSBzb3J0aW5nIGlzIGRvbmUgYnkgQ3JlYXRpb25UaW1lLiBTZXQgRW5kVGltZSB0byBUcnVlIHRvIHNvcnQgYnkgXCJFbmRQcm9jZXNzaW5nVGltZVwiLiBcdTAwMGRcdTAwMGFPVVRQVVRTOlx1MDAwZFx1MDAwYS0gUXVldWVJdGVtczogTGlzdCBvZiBRdWV1ZUl0ZW1zIGZvdW5kXHUwMDBkXHUwMDBhIiwiPFZlcnNpb24+a19fQmFja2luZ0ZpZWxkIjoxfQ==</sap2010:Annotation.AnnotationText>
   <sap:VirtualizedContainerService.HintSize>1093,2616</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -79,7 +80,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Returns the newest queue item that matches the Reference given. Filter is StartsWith&#xA;INPUTS:&#xA;- QueueName: String with the full QueueName&#xA;- OrchestratorFolderPath: full path of the orchstrator folder&#xA;- Reference (optional): References of the queue items (Can be empty)&#xA;- EndTime: By default, the sorting is done by CreationTime. Set EndTime to True to sort by &quot;EndProcessingTime&quot;. NOTE: This might lead to unexpected results if there are items that haven't been processed yet.&#xA;&#xA;&#xA;OUTPUTS:&#xA;- QueueItems: List of QueueItems found&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="705,2551" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Returns the newest queue item that matches the Reference given. Filter is StartsWith&#xD;&#xA;INPUTS:&#xD;&#xA;- QueueName: String with the full QueueName&#xD;&#xA;- OrchestratorFolderPath: full path of the orchstrator folder&#xD;&#xA;- Reference (optional): References of the queue items (Can be empty)&#xD;&#xA;- EndTime: By default, the sorting is done by CreationTime. Set EndTime to True to sort by &quot;EndProcessingTime&quot;. &#xD;&#xA;OUTPUTS:&#xD;&#xA;- QueueItems: List of QueueItems found&#xD;&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="705,2551" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="jsonResponse" />
       <Variable x:TypeArguments="x:Int32" Name="intStatusCode" />
