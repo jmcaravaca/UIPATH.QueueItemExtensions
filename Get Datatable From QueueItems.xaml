@@ -6,10 +6,10 @@
     <x:Property Name="DatatableItems" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:Annotation.AnnotationText>UPTF00000300eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiQ29udmVydCBMaXN0PFF1ZXVlSXRlbXM+IHRvIERhdGF0YWJsZSB3aXRoIGJhc2ljIGRhdGEgYW5kIHNwZWNpZmljIGRhdGEgYWRkZWQgKE9wdGlvbmFsKS5cdTAwMGFcdTAwMGFJbnB1dHNcdTAwMGEtIFRyYW5zYWN0aW9uSXRlbXMgKExpc3Q8UXVldWVJdGVtcz4pXHUwMDBhLSBVc2VTcGVjaWZpY0NvbnRlbnQ6IEJvb2wgdG8gYWRkIHRoZSBcIlNwZWNpZmljIENvbnRlbnRcIiBvZiB0aGUgcXVldWUgaXRlbXMuXHUwMDBhLSBVc2VPdXRwdXQ6IEJvb2wgdG8gYWRkIHRoZSBcIk91dHB1dCBEYXRhXCIgb2YgdGhlIHF1ZXVlIGl0ZW1zLiBcdTAwMGFcdTAwMGFPdXRwdXRzXHUwMDBhLSBEYXRhdGFibGVJdGVtcyAoRGF0YXRhYmxlKS4gVGhlIGNvbHVtbnMgd2lsbCBiZTogUmVmZXJlbmNlO1N0YXR1cztFeGNlcHRpb24gUmVhc29uO0V4Y2VwdGlvbiBEZXRhaWxzOyhTcGVjaWZpYyBDb250ZW50IENvbHVtbnMpOyhPdXRwdXQgQ29sdW1ucykiLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>716,5165</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1226,5023</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="30">
+    <scg:List x:TypeArguments="x:String" Capacity="60">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
@@ -40,6 +40,7 @@
       <x:String>UiPath.UIAutomationNext.Activities</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -144,7 +145,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Reference" DataTable="[DatatableItems]" DisplayName="Add Data Column Reference" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
+        <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Reference" DataTable="[DatatableItems]" DisplayName="Add Data Column Reference" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" MaxLength="-1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -152,7 +153,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:AddDataColumn>
-        <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Status" DataTable="[DatatableItems]" DisplayName="Add Data Column Status" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4">
+        <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Status" DataTable="[DatatableItems]" DisplayName="Add Data Column Status" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" MaxLength="-1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -160,7 +161,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:AddDataColumn>
-        <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Exception Reason" DataTable="[DatatableItems]" DisplayName="Add Data Column ExcReason" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5">
+        <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Exception Reason" DataTable="[DatatableItems]" DisplayName="Add Data Column ExcReason" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" MaxLength="-1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -168,7 +169,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:AddDataColumn>
-        <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Exception Details" DataTable="[DatatableItems]" DisplayName="Add Data Column ExcDetails" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6">
+        <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Exception Details" DataTable="[DatatableItems]" DisplayName="Add Data Column ExcDetails" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" MaxLength="-1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -296,12 +297,12 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap2010:Annotation.AnnotationText="Select Only &quot;Specific Content&quot; as keyvalue pairs" DisplayName="Get Only Output Content List" sap:VirtualizedContainerService.HintSize="262,102" sap2010:WorkflowViewState.IdRef="Assign_18">
+                  <Assign sap2010:Annotation.AnnotationText="Select Only &quot;Output&quot; as keyvalue pairs. Only for &quot;Succesful&quot; items" DisplayName="Get Only Output Content List" sap:VirtualizedContainerService.HintSize="262,102" sap2010:WorkflowViewState.IdRef="Assign_18">
                     <Assign.To>
                       <OutArgument x:TypeArguments="scg:List(scg:KeyValuePair(x:String, x:Object))">[ListOfDictData]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="scg:List(scg:KeyValuePair(x:String, x:Object))">[TransactionItems.SelectMany(Function(d) d.Output).ToList]</InArgument>
+                      <InArgument x:TypeArguments="scg:List(scg:KeyValuePair(x:String, x:Object))">[TransactionItems.Where(Function(d) d.Status.ToString = "Successful").SelectMany(Function(d) d.Output).ToList]</InArgument>
                     </Assign.Value>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -368,7 +369,7 @@
         </If>
       </Sequence>
     </Sequence>
-    <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="[idx]" DisplayName="For Each Queue Item" sap:VirtualizedContainerService.HintSize="562,1511" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[TransactionItems]">
+    <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="[idx]" DisplayName="For Each Queue Item" sap:VirtualizedContainerService.HintSize="634,1511" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[TransactionItems]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ui:QueueItem">
           <ActivityAction.Argument>

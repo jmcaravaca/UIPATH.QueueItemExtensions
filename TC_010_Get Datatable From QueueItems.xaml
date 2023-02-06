@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TC_010_Get_Datatable_From_QueueItems" this:TC_010_Get_Datatable_From_QueueItems.queuename="ATC-009_Activacion4G_XENA_Activacion4G" this:TC_010_Get_Datatable_From_QueueItems.queuefolder="B2B/ATC" this:TC_010_Get_Datatable_From_QueueItems.useoutput="False" this:TC_010_Get_Datatable_From_QueueItems.usespecificcontent="True" this:TC_010_Get_Datatable_From_QueueItems.numberofcolumns="2" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TC_010_Get_Datatable_From_QueueItems" this:TC_010_Get_Datatable_From_QueueItems.queuename="TestQueueOutput" this:TC_010_Get_Datatable_From_QueueItems.queuefolder="Globals" this:TC_010_Get_Datatable_From_QueueItems.useoutput="True" this:TC_010_Get_Datatable_From_QueueItems.usespecificcontent="True" this:TC_010_Get_Datatable_From_QueueItems.numberofcolumns="2" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="queuename" Type="InArgument(x:String)" />
     <x:Property Name="queuefolder" Type="InArgument(x:String)" />
@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>827,1045</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1226,1045</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TC_010_Get_Datatable_From_QueueItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
