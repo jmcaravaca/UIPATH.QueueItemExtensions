@@ -6,7 +6,7 @@
     <x:Property Name="DatatableItems" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:Annotation.AnnotationText>UPTF00000300eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiQ29udmVydCBMaXN0PFF1ZXVlSXRlbXM+IHRvIERhdGF0YWJsZSB3aXRoIGJhc2ljIGRhdGEgYW5kIHNwZWNpZmljIGRhdGEgYWRkZWQgKE9wdGlvbmFsKS5cdTAwMGFcdTAwMGFJbnB1dHNcdTAwMGEtIFRyYW5zYWN0aW9uSXRlbXMgKExpc3Q8UXVldWVJdGVtcz4pXHUwMDBhLSBVc2VTcGVjaWZpY0NvbnRlbnQ6IEJvb2wgdG8gYWRkIHRoZSBcIlNwZWNpZmljIENvbnRlbnRcIiBvZiB0aGUgcXVldWUgaXRlbXMuXHUwMDBhLSBVc2VPdXRwdXQ6IEJvb2wgdG8gYWRkIHRoZSBcIk91dHB1dCBEYXRhXCIgb2YgdGhlIHF1ZXVlIGl0ZW1zLiBcdTAwMGFcdTAwMGFPdXRwdXRzXHUwMDBhLSBEYXRhdGFibGVJdGVtcyAoRGF0YXRhYmxlKS4gVGhlIGNvbHVtbnMgd2lsbCBiZTogUmVmZXJlbmNlO1N0YXR1cztFeGNlcHRpb24gUmVhc29uO0V4Y2VwdGlvbiBEZXRhaWxzOyhTcGVjaWZpYyBDb250ZW50IENvbHVtbnMpOyhPdXRwdXQgQ29sdW1ucykiLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>1226,5023</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1085,4524</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="60">
@@ -92,7 +92,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Convert List&lt;QueueItems&gt; to Datatable with basic data and specific data added (Optional).&#xA;&#xA;Inputs&#xA;- TransactionItems (List&lt;QueueItems&gt;)&#xA;- UseSpecificContent: Bool to add the &quot;Specific Content&quot; of the queue items.&#xA;- UseOutput: Bool to add the &quot;Output Data&quot; of the queue items. &#xA;&#xA;Outputs&#xA;- DatatableItems (Datatable). The columns will be: Reference;Status;Exception Reason;Exception Details;(Specific Content Columns);(Output Columns)" DisplayName="Get one Datatable from QueueItems list" sap:VirtualizedContainerService.HintSize="676,4958" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence sap2010:Annotation.AnnotationText="Convert List&lt;QueueItems&gt; to Datatable with basic data and specific data added (Optional).&#xA;&#xA;Inputs&#xA;- TransactionItems (List&lt;QueueItems&gt;)&#xA;- UseSpecificContent: Bool to add the &quot;Specific Content&quot; of the queue items.&#xA;- UseOutput: Bool to add the &quot;Output Data&quot; of the queue items. &#xA;&#xA;Outputs&#xA;- DatatableItems (Datatable). The columns will be: Reference;Status;Exception Reason;Exception Details;(Specific Content Columns);(Output Columns)" DisplayName="Get one Datatable from QueueItems list" sap:VirtualizedContainerService.HintSize="610,4459" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="idx" />
     </Sequence.Variables>
@@ -103,7 +103,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[TransactionItems.Count = 0]" DisplayName="If No Items" sap:VirtualizedContainerService.HintSize="634,301" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[TransactionItems.Count = 0]" DisplayName="If No Items" sap:VirtualizedContainerService.HintSize="568,301" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
@@ -124,14 +124,14 @@
         </Sequence>
       </If.Else>
     </If>
-    <Sequence DisplayName="Build Datatable" sap:VirtualizedContainerService.HintSize="634,2812" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <Sequence DisplayName="Build Datatable" sap:VirtualizedContainerService.HintSize="568,2313" sap2010:WorkflowViewState.IdRef="Sequence_11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Assign dtItems" sap:VirtualizedContainerService.HintSize="592,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign DisplayName="Assign dtItems" sap:VirtualizedContainerService.HintSize="526,60" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[DatatableItems]</OutArgument>
         </Assign.To>
@@ -139,7 +139,7 @@
           <InArgument x:TypeArguments="sd:DataTable">[new Datatable()]</InArgument>
         </Assign.Value>
       </Assign>
-      <Sequence DisplayName="Add Basic Columns" sap:VirtualizedContainerService.HintSize="592,416" sap2010:WorkflowViewState.IdRef="Sequence_20">
+      <Sequence DisplayName="Add Basic Columns" sap:VirtualizedContainerService.HintSize="526,507" sap2010:WorkflowViewState.IdRef="Sequence_20">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -154,6 +154,14 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:AddDataColumn>
         <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Status" DataTable="[DatatableItems]" DisplayName="Add Data Column Status" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" MaxLength="-1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:AddDataColumn>
+        <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Exception Type" DataTable="[DatatableItems]" DisplayName="Add Data Column Status" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_8" MaxLength="-1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -178,14 +186,14 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:AddDataColumn>
       </Sequence>
-      <Sequence DisplayName="Add Specific Content" sap:VirtualizedContainerService.HintSize="592,1191" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence DisplayName="Add Specific Content" sap:VirtualizedContainerService.HintSize="526,601" sap2010:WorkflowViewState.IdRef="Sequence_12">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[UseSpecificContent]" DisplayName="Specific Content" sap:VirtualizedContainerService.HintSize="550,1099" sap2010:WorkflowViewState.IdRef="If_5">
+        <If Condition="[UseSpecificContent]" DisplayName="Specific Content" sap:VirtualizedContainerService.HintSize="484,509" sap2010:WorkflowViewState.IdRef="If_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -193,7 +201,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <TryCatch DisplayName="Try Assigning Data" sap:VirtualizedContainerService.HintSize="514,912" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch DisplayName="Try Assigning Data" sap:VirtualizedContainerService.HintSize="434,322" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <TryCatch.Try>
                 <Sequence DisplayName="Get and Add Specific Cntent Columns" sap:VirtualizedContainerService.HintSize="476,685" sap2010:WorkflowViewState.IdRef="Sequence_15">
                   <Sequence.Variables>
@@ -251,10 +259,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="480,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -270,7 +278,7 @@
           </If.Then>
         </If>
       </Sequence>
-      <Sequence DisplayName="Add Output" sap:VirtualizedContainerService.HintSize="592,933" sap2010:WorkflowViewState.IdRef="Sequence_32">
+      <Sequence DisplayName="Add Output" sap:VirtualizedContainerService.HintSize="526,933" sap2010:WorkflowViewState.IdRef="Sequence_32">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -369,7 +377,7 @@
         </If>
       </Sequence>
     </Sequence>
-    <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="[idx]" DisplayName="For Each Queue Item" sap:VirtualizedContainerService.HintSize="634,1511" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[TransactionItems]">
+    <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="[idx]" DisplayName="For Each Queue Item" sap:VirtualizedContainerService.HintSize="568,1511" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[TransactionItems]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ui:QueueItem">
           <ActivityAction.Argument>
@@ -395,6 +403,7 @@
               <Assign.Value>
                 <InArgument x:TypeArguments="s:Object[]" xml:space="preserve">[{CType(item.Reference, Object), _
 CType(item.Status, Object), _
+If(IsNothing(item.ProcessingException), Nothing, CType(item.ProcessingException.Type.ToString, Object)), _
 If(IsNothing(item.ProcessingException), Nothing, CType(item.ProcessingException.Reason, Object)), _
 If(IsNothing(item.ProcessingException), Nothing, CType(item.ProcessingException.Details, Object))}]</InArgument>
               </Assign.Value>
