@@ -1,0 +1,130 @@
+{
+  "DisplayName": "Get All Queue Items",
+  "Tooltip": "Gets Up To 1 000  queue items (bypasses 100 limit of Get Queue Items)\nARGUMENTS:\nSame as \"Get Queue Items\" Activity, but Status and Priority must be passed as objects:\n\n- FilterTimeProcessing: By default, \"FilterTo\" and \"FilterFrom\" will use \"CreationTime\" .Set this to TRUE to use \"StartProcessing Time\" and \"End Processing Time\". instead \n\nEX: {QueueItemStatus.Successful, QueueItemStatus.Failed} -> Default \"All\" if Empty\n{QueueItemPriority.High} -> Default \"All\" if Empty",
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "QueueName",
+      "DisplayName": "QueueName",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": []
+    },
+    {
+      "Name": "QueueItemStates",
+      "DisplayName": "QueueItemStates",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": []
+    },
+    {
+      "Name": "QueueItems",
+      "DisplayName": "QueueItems",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": []
+    },
+    {
+      "Name": "FilterTo",
+      "DisplayName": "FilterTo",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": []
+    },
+    {
+      "Name": "FilterFrom",
+      "DisplayName": "FilterFrom",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": []
+    },
+    {
+      "Name": "Reference",
+      "DisplayName": "Reference",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": []
+    },
+    {
+      "Name": "FilterTop",
+      "DisplayName": "FilterTop",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "Number",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": []
+    },
+    {
+      "Name": "Continue_OnError",
+      "DisplayName": "Continue_OnError",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "Toggle",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": []
+    },
+    {
+      "Name": "Priorities",
+      "DisplayName": "Priorities",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": []
+    },
+    {
+      "Name": "OrchestratorFolderPath",
+      "DisplayName": "OrchestratorFolderPath",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": []
+    },
+    {
+      "Name": "FilterTimeProcessing",
+      "DisplayName": "FilterTimeProcessing",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "Toggle",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": []
+    }
+  ]
+}
