@@ -1,19 +1,17 @@
 {
-  "name": "QueueItemExtensions_Windows",
+  "name": "QueueItemExtensions",
   "description": "This library provides additional methods to get and manipulate queue items by using the Orchestrator API:\r\n- Modify SpecificContent\r\n- Get Queue Items (more than 100 items per call)\r\n- Get All Queue Items (filtered by \"Progress\" String)\r\n- Get All Queue Items (filtered by key-value pair in SpecificContent)",
   "main": "NewActivity.xaml",
   "dependencies": {
     "Newtonsoft.Json": "13.0.1",
     "UiPath.System.Activities": "22.4.1",
-    "UiPath.Testing.Activities": "22.4.3",
-    "UiPath.UIAutomation.Activities": "21.10.5",
     "UiPath.WebAPI.Activities": "1.13.2"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.6.0",
-  "projectVersion": "2.3.0",
+  "projectVersion": "3.0.0",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,

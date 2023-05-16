@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "+4jA8qvR8als0NKPFOYcWMN1BoUWjfSa4KV/DUSuKx1BRvbDrs7lr4ontKSOMK4z2OZ9roZ2255zGFTdQBy2Og==",
+  "dgSpecHash": "T+HgeSINorqTB1v0QLkCrGaIzF99tG8rZeL1bAaS+eUM2O5e0p9Ma7Des6rvu26iP8IKv+H/AichLLS2i0SBFw==",
   "success": true,
   "projectFilePath": "\\\\clescm0002\\rpa\\01. Procesos\\FRAMEWORKS\\Libraries\\QueueItems\\.local\\",
   "expectedPackageFiles": [
-    "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\avalonedit\\6.0.1\\avalonedit.6.0.1.nupkg.sha512",
     "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",
     "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\markdig.signed\\0.21.1\\markdig.signed.0.21.1.nupkg.sha512",
@@ -127,17 +126,9 @@
     "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
-    "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\uipath\\21.10.34.30369\\uipath.21.10.34.30369.nupkg.sha512",
-    "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\uipath.activities.runtimegovernance\\1.1.3\\uipath.activities.runtimegovernance.1.1.3.nupkg.sha512",
-    "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\uipath.imageprocessing\\21.10.2\\uipath.imageprocessing.21.10.2.nupkg.sha512",
-    "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\uipath.ocr.activities\\3.3.2\\uipath.ocr.activities.3.3.2.nupkg.sha512",
-    "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\uipath.ocr.contracts\\2.9.1\\uipath.ocr.contracts.2.9.1.nupkg.sha512",
     "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\uipath.platform\\22.10.2\\uipath.platform.22.10.2.nupkg.sha512",
     "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\uipath.system.activities\\22.4.1\\uipath.system.activities.22.4.1.nupkg.sha512",
     "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\uipath.telemetry.client\\1.5.3\\uipath.telemetry.client.1.5.3.nupkg.sha512",
-    "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\uipath.testing.activities\\22.4.3\\uipath.testing.activities.22.4.3.nupkg.sha512",
-    "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\uipath.uiautomation.activities\\21.10.5\\uipath.uiautomation.activities.21.10.5.nupkg.sha512",
-    "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\uipath.vision\\3.1.4\\uipath.vision.3.1.4.nupkg.sha512",
     "C:\\Users\\desarrollo.rpa\\.nuget\\packages\\uipath.webapi.activities\\1.13.2\\uipath.webapi.activities.1.13.2.nupkg.sha512"
   ],
   "logs": []
