@@ -1,5 +1,5 @@
 {
-  "name": "QueueItemExtensions",
+  "name": "QueueItemExtensions_Windows",
   "description": "This library provides additional methods to get and manipulate queue items by using the Orchestrator API:\r\n- Modify SpecificContent\r\n- Get Queue Items (more than 100 items per call)\r\n- Get All Queue Items (filtered by \"Progress\" String)\r\n- Get All Queue Items (filtered by key-value pair in SpecificContent)",
   "main": "NewActivity.xaml",
   "dependencies": {
@@ -28,7 +28,8 @@
     "executionType": "Workflow",
     "readyForPiP": false,
     "startsInPiP": false,
-    "mustRestoreAllDependencies": true
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -52,53 +53,63 @@
         "editingStatus": "InProgress",
         "testCaseId": "5103ffad-4ed0-4164-8b59-921133fe99bd",
         "dataVariationFilePath": ".variations\\UpdateQueueItemData_TestData_Sheet1.json",
+        "testCaseType": "TestCase",
         "fileName": "TC_001_Update Queue Item Data.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "2f458d8b-fbb3-4013-845d-71069eeb13c8",
         "dataVariationFilePath": ".variations\\Get All Queue Items_TestData_Sheet1.json",
+        "testCaseType": "TestCase",
         "fileName": "TC_002_Get All Queue Items.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "6216a215-d64b-4a67-a4d3-52e0f4c24726",
+        "testCaseType": "TestCase",
         "fileName": "TC_003_GetQueueItemsByProgress.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "0915070d-80e8-4893-8460-c9b1495fe328",
+        "testCaseType": "TestCase",
         "fileName": "TC_004_GetQueueItemsBySpecificData.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "46a09714-e6d1-4767-9122-5c2a317bdba1",
+        "testCaseType": "TestCase",
         "fileName": "TC_005_GetQueueRetries.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "d5c15706-69b8-4bb9-870a-7ae7b4280b1f",
+        "testCaseType": "TestCase",
         "fileName": "TC_006_Get QueueItem End Processing Time.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "4113e486-c04b-4959-927a-91560e105fa2",
+        "testCaseType": "TestCase",
         "fileName": "TC_007_GetBasicItemsBySpecificData.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "23ea6f30-53d2-44d8-90c9-34e8175b2aca",
+        "testCaseType": "TestCase",
         "fileName": "TC_008_GetOldestQueueItemByReference.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "97484bb1-09e4-4cb9-a418-0b77929316d0",
+        "testCaseType": "TestCase",
         "fileName": "TC_009_GetNewestQueueItemByReference.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "80187d0e-7f43-4e53-b7f5-b967d4b5c36a",
         "dataVariationFilePath": ".variations\\TestDataTC_010_Sheet1.json",
+        "testCaseType": "TestCase",
         "fileName": "TC_010_Get Datatable From QueueItems.xaml"
       }
     ],
@@ -110,5 +121,5 @@
   "publishData": {
     "iconUrl": ".package/images.jpg"
   },
-  "targetFramework": "Legacy"
+  "targetFramework": "Windows"
 }

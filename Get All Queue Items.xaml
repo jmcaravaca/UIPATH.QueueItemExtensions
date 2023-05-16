@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Get_All_Queue_Items" this:Get_All_Queue_Items.FilterTimeProcessing="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Get_All_Queue_Items" this:Get_All_Queue_Items.FilterTimeProcessing="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="QueueName" Type="InArgument(x:String)" />
     <x:Property Name="QueueItemStates" Type="InArgument(ui:QueueItemStatus[])" />
@@ -12,11 +12,11 @@
     <x:Property Name="OrchestratorFolderPath" Type="InArgument(x:String)" />
     <x:Property Name="FilterTimeProcessing" Type="InArgument(x:Boolean)" />
   </x:Members>
-  <mva:VisualBasic.Settings>
+  <VisualBasic.Settings>
     <x:Null />
-  </mva:VisualBasic.Settings>
+  </VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF00000344eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiR2V0cyBVcCBUbyAxMCAwMDAgIHF1ZXVlIGl0ZW1zIChieXBhc3NlcyAxMDAgbGltaXQgb2YgR2V0IFF1ZXVlIEl0ZW1zKVx1MDAwYUFSR1VNRU5UUzpcdTAwMGFTYW1lIGFzIFwiR2V0IFF1ZXVlIEl0ZW1zXCIgQWN0aXZpdHksIGJ1dCBTdGF0dXMgYW5kIFByaW9yaXR5IG11c3QgYmUgcGFzc2VkIGFzIG9iamVjdHM6XHUwMDBhXHUwMDBhLSBGaWx0ZXJUaW1lUHJvY2Vzc2luZzogQnkgZGVmYXVsdCwgXCJGaWx0ZXJUb1wiIGFuZCBcIkZpbHRlckZyb21cIiB3aWxsIHVzZSBcIkNyZWF0aW9uVGltZVwiIC5TZXQgdGhpcyB0byBUUlVFIHRvIHVzZSBcIlN0YXJ0UHJvY2Vzc2luZyBUaW1lXCIgYW5kIFwiRW5kIFByb2Nlc3NpbmcgVGltZVwiLiBpbnN0ZWFkIFx1MDAwYVx1MDAwYUVYOiB7UXVldWVJdGVtU3RhdHVzLlN1Y2Nlc3NmdWwsIFF1ZXVlSXRlbVN0YXR1cy5GYWlsZWR9IC0+IERlZmF1bHQgXCJBbGxcIiBpZiBFbXB0eVx1MDAwYXtRdWV1ZUl0ZW1Qcmlvcml0eS5IaWdofSAtPiBEZWZhdWx0IFwiQWxsXCIgaWYgRW1wdHkiLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>1226,5079</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1033,7101</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -59,7 +59,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -89,9 +89,18 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Web</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Gets Up To 10 000  queue items (bypasses 100 limit of Get Queue Items)&#xA;ARGUMENTS:&#xA;Same as &quot;Get Queue Items&quot; Activity, but Status and Priority must be passed as objects:&#xA;&#xA;- FilterTimeProcessing: By default, &quot;FilterTo&quot; and &quot;FilterFrom&quot; will use &quot;CreationTime&quot; .Set this to TRUE to use &quot;StartProcessing Time&quot; and &quot;End Processing Time&quot;. instead &#xA;&#xA;EX: {QueueItemStatus.Successful, QueueItemStatus.Failed} -&gt; Default &quot;All&quot; if Empty&#xA;{QueueItemPriority.High} -&gt; Default &quot;All&quot; if Empty" DisplayName="Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="917,5014" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Gets Up To 10 000  queue items (bypasses 100 limit of Get Queue Items)&#xA;ARGUMENTS:&#xA;Same as &quot;Get Queue Items&quot; Activity, but Status and Priority must be passed as objects:&#xA;&#xA;- FilterTimeProcessing: By default, &quot;FilterTo&quot; and &quot;FilterFrom&quot; will use &quot;CreationTime&quot; .Set this to TRUE to use &quot;StartProcessing Time&quot; and &quot;End Processing Time&quot;. instead &#xA;&#xA;EX: {QueueItemStatus.Successful, QueueItemStatus.Failed} -&gt; Default &quot;All&quot; if Empty&#xA;{QueueItemPriority.High} -&gt; Default &quot;All&quot; if Empty" DisplayName="Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="742,7036" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
       <Variable x:TypeArguments="x:Int32" Name="intStatusCode" />
@@ -103,7 +112,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="CURL Example:&#xA;&#xA;curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20192%20and%20Progress%20eq%20'Prueba1'%20and%20startswith(Reference%2C'Test')&amp;%24top=1000&quot; -H  &quot;accept: application/json&quot;" DisplayName="API CALL" sap:VirtualizedContainerService.HintSize="875,4463" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence sap2010:Annotation.AnnotationText="CURL Example:&#xA;&#xA;curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20192%20and%20Progress%20eq%20'Prueba1'%20and%20startswith(Reference%2C'Test')&amp;%24top=1000&quot; -H  &quot;accept: application/json&quot;" DisplayName="API CALL" sap:VirtualizedContainerService.HintSize="680,6248" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strEndpointFormat" />
         <Variable x:TypeArguments="x:String" Default="/odata/QueueItems/?" Name="strEndpointBase" />
@@ -117,7 +126,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Queue Definition ID" sap:VirtualizedContainerService.HintSize="833,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="__GetQueueDefinitionId.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Queue Definition ID" sap:VirtualizedContainerService.HintSize="618,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="__GetQueueDefinitionId.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="QueueName">[QueueName]</InArgument>
           <OutArgument x:TypeArguments="x:Int32" x:Key="QueueId">[queueId]</OutArgument>
@@ -130,15 +139,15 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <Assign DisplayName="Assign Base Endpoint" sap:VirtualizedContainerService.HintSize="833,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign DisplayName="Assign Base Endpoint" sap:VirtualizedContainerService.HintSize="618,61" sap2010:WorkflowViewState.IdRef="Assign_6">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strEndpointBase]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">["/odata/QueueItems/?%24filter=QueueDefinitionId%20eq%20{0}%20and%20startswith(Reference%2C'{1}')"]</InArgument>
+          <InArgument x:TypeArguments="x:String">/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20{0}%20and%20startswith(Reference%2C'{1}')</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="PreFormatEndpoint" sap:VirtualizedContainerService.HintSize="833,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign DisplayName="PreFormatEndpoint" sap:VirtualizedContainerService.HintSize="618,61" sap2010:WorkflowViewState.IdRef="Assign_7">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strEndpointFormat]</OutArgument>
         </Assign.To>
@@ -146,7 +155,7 @@
           <InArgument x:TypeArguments="x:String">[String.Format(strEndpointBase, CStr(queueId), Reference)]</InArgument>
         </Assign.Value>
       </Assign>
-      <If sap2010:Annotation.AnnotationText="StartProcessing gt 2022-09-23T23:59:59.99Z&#xA;OR&#xA;CreationTime gt  2022-09-23T23:59:59.99Z" Condition="[Not IsNothing(FilterFrom)]" DisplayName="If Date FROM" sap:VirtualizedContainerService.HintSize="833,746" sap2010:WorkflowViewState.IdRef="If_7">
+      <If sap2010:Annotation.AnnotationText="StartProcessing gt 2022-09-23T23:59:59.99Z&#xA;OR&#xA;CreationTime gt  2022-09-23T23:59:59.99Z" Condition="[Not IsNothing(FilterFrom)]" DisplayName="If Date FROM" sap:VirtualizedContainerService.HintSize="618,1068" sap2010:WorkflowViewState.IdRef="If_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -155,7 +164,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Add FilterFrom" sap:VirtualizedContainerService.HintSize="695,502" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <Sequence DisplayName="Add FilterFrom" sap:VirtualizedContainerService.HintSize="540,732" sap2010:WorkflowViewState.IdRef="Sequence_18">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="filterstring" />
             </Sequence.Variables>
@@ -164,7 +173,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign DateTime to String" sap:VirtualizedContainerService.HintSize="653,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+            <Assign DisplayName="Assign DateTime to String" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_11">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[filterstring]</OutArgument>
               </Assign.To>
@@ -172,15 +181,15 @@
                 <InArgument x:TypeArguments="x:String">[FilterFrom.Value.ToString("u").Replace(" ", "T")]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[FilterTimeProcessing]" DisplayName="If FilterTimeProcessing" sap:VirtualizedContainerService.HintSize="653,310" sap2010:WorkflowViewState.IdRef="If_10">
+            <If Condition="[FilterTimeProcessing]" DisplayName="If FilterTimeProcessing" sap:VirtualizedContainerService.HintSize="478,520" sap2010:WorkflowViewState.IdRef="If_10">
               <If.Then>
-                <Sequence DisplayName="Filter StartProcessing" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                <Sequence DisplayName="Filter StartProcessing" sap:VirtualizedContainerService.HintSize="400,172" sap2010:WorkflowViewState.IdRef="Sequence_27">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign StartProcessing" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                  <Assign DisplayName="Assign StartProcessing" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_13">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[strEndpointFormat]</OutArgument>
                     </Assign.To>
@@ -191,13 +200,13 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Filter CreationTime" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                <Sequence DisplayName="Filter CreationTime" sap:VirtualizedContainerService.HintSize="400,172" sap2010:WorkflowViewState.IdRef="Sequence_29">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign CreationTime" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+                  <Assign DisplayName="Assign CreationTime" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_28">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[strEndpointFormat]</OutArgument>
                     </Assign.To>
@@ -211,7 +220,7 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -220,7 +229,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <If sap2010:Annotation.AnnotationText="EndProcessing gt 2022-09-23T23:59:59.99Z&#xA;OR&#xA;CreationTime gt 2022-09-23T23:59:59.99Z&#xA;" Condition="[Not IsNothing(FilterTo)]" DisplayName="If Date TO" sap:VirtualizedContainerService.HintSize="833,669" sap2010:WorkflowViewState.IdRef="If_8">
+      <If sap2010:Annotation.AnnotationText="EndProcessing gt 2022-09-23T23:59:59.99Z&#xA;OR&#xA;CreationTime gt 2022-09-23T23:59:59.99Z&#xA;" Condition="[Not IsNothing(FilterTo)]" DisplayName="If Date TO" sap:VirtualizedContainerService.HintSize="618,939" sap2010:WorkflowViewState.IdRef="If_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -229,7 +238,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Add FilterTo" sap:VirtualizedContainerService.HintSize="611,410" sap2010:WorkflowViewState.IdRef="Sequence_22">
+          <Sequence DisplayName="Add FilterTo" sap:VirtualizedContainerService.HintSize="402,588" sap2010:WorkflowViewState.IdRef="Sequence_22">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="filterstring" />
             </Sequence.Variables>
@@ -238,7 +247,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="569,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+            <Assign sap:VirtualizedContainerService.HintSize="340,61" sap2010:WorkflowViewState.IdRef="Assign_14">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[filterstring]</OutArgument>
               </Assign.To>
@@ -246,9 +255,9 @@
                 <InArgument x:TypeArguments="x:String">[FilterTo.Value.ToString("u").Replace(" ", "T")]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[FilterTimeProcessing]" DisplayName="If FilterTimeProcessing" sap:VirtualizedContainerService.HintSize="569,218" sap2010:WorkflowViewState.IdRef="If_11">
+            <If Condition="[FilterTimeProcessing]" DisplayName="If FilterTimeProcessing" sap:VirtualizedContainerService.HintSize="340,376" sap2010:WorkflowViewState.IdRef="If_11">
               <If.Then>
-                <Assign DisplayName="Assign EndProcessing" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+                <Assign DisplayName="Assign EndProcessing" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_29">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[strEndpointFormat]</OutArgument>
                   </Assign.To>
@@ -258,7 +267,7 @@
                 </Assign>
               </If.Then>
               <If.Else>
-                <Assign DisplayName="Assign CreationTime" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+                <Assign DisplayName="Assign CreationTime" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_30">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[strEndpointFormat]</OutArgument>
                   </Assign.To>
@@ -271,7 +280,7 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_21">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -280,7 +289,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[FilterTop = 0]" DisplayName="If No TOP, default to 10 000" sap:VirtualizedContainerService.HintSize="833,405" sap2010:WorkflowViewState.IdRef="If_5">
+      <If Condition="[FilterTop = 0]" DisplayName="If No TOP, default to 10 000" sap:VirtualizedContainerService.HintSize="618,727" sap2010:WorkflowViewState.IdRef="If_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -288,13 +297,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence sap:VirtualizedContainerService.HintSize="400,172" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign 10k" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign DisplayName="Assign 10k" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[FilterTop]</OutArgument>
               </Assign.To>
@@ -305,9 +314,9 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <If Condition="[FilterTop &gt; 10000]" DisplayName="If Top &gt; 10k, clamp to 10k" sap:VirtualizedContainerService.HintSize="484,247" sap2010:WorkflowViewState.IdRef="If_9">
+          <If Condition="[FilterTop &gt; 10000]" DisplayName="If Top &gt; 10k, clamp to 10k" sap:VirtualizedContainerService.HintSize="478,379" sap2010:WorkflowViewState.IdRef="If_9">
             <If.Then>
-              <Assign DisplayName="Assign 10k" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+              <Assign DisplayName="Assign 10k" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_26">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[FilterTop]</OutArgument>
                 </Assign.To>
@@ -317,7 +326,7 @@
               </Assign>
             </If.Then>
             <If.Else>
-              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_26">
+              <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_26">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -328,7 +337,7 @@
           </If>
         </If.Else>
       </If>
-      <If Condition="[Not IsNothing(QueueItemStates)]" DisplayName="If States, add (IN queue item states)" sap:VirtualizedContainerService.HintSize="833,855" sap2010:WorkflowViewState.IdRef="If_4">
+      <If Condition="[Not IsNothing(QueueItemStates)]" DisplayName="If States, add (IN queue item states)" sap:VirtualizedContainerService.HintSize="618,998" sap2010:WorkflowViewState.IdRef="If_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -336,7 +345,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Add States" sap:VirtualizedContainerService.HintSize="476,668" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Add States" sap:VirtualizedContainerService.HintSize="540,719" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strListOfStates" />
             </Sequence.Variables>
@@ -346,7 +355,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign Empty List of States" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+            <Assign DisplayName="Assign Empty List of States" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_16">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strListOfStates]</OutArgument>
               </Assign.To>
@@ -356,19 +365,19 @@
                 </InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="ui:QueueItemStatus" CurrentIndex="{x:Null}" DisplayName="For Each State" sap:VirtualizedContainerService.HintSize="434,276" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[QueueItemStates]">
+            <ui:ForEach x:TypeArguments="ui:QueueItemStatus" CurrentIndex="{x:Null}" DisplayName="For Each State" sap:VirtualizedContainerService.HintSize="478,305" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[QueueItemStates]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:QueueItemStatus">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:QueueItemStatus" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,172" sap2010:WorkflowViewState.IdRef="Sequence_23">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Concatenate" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                    <Assign DisplayName="Concatenate" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_17">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[strListOfStates]</OutArgument>
                       </Assign.To>
@@ -380,7 +389,7 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
-            <Assign DisplayName="Remove last comma" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+            <Assign DisplayName="Remove last comma" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_18">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strListOfStates]</OutArgument>
               </Assign.To>
@@ -388,7 +397,7 @@
                 <InArgument x:TypeArguments="x:String">[Left(strListOfStates, strListOfStates.Length - 1)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Concatenate Endpoint" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+            <Assign DisplayName="Concatenate Endpoint" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_19">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strEndpointFormat]</OutArgument>
               </Assign.To>
@@ -399,7 +408,7 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -408,7 +417,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[Not IsNothing(Priorities)]" DisplayName="If Priorities, Add them" sap:VirtualizedContainerService.HintSize="833,855" sap2010:WorkflowViewState.IdRef="If_3">
+      <If Condition="[Not IsNothing(Priorities)]" DisplayName="If Priorities, Add them" sap:VirtualizedContainerService.HintSize="618,998" sap2010:WorkflowViewState.IdRef="If_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -416,7 +425,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Add Priorities" sap:VirtualizedContainerService.HintSize="476,668" sap2010:WorkflowViewState.IdRef="Sequence_25">
+          <Sequence DisplayName="Add Priorities" sap:VirtualizedContainerService.HintSize="540,719" sap2010:WorkflowViewState.IdRef="Sequence_25">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strListOfPriorities" />
             </Sequence.Variables>
@@ -426,7 +435,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign Initialize List Of Priorites" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+            <Assign DisplayName="Assign Initialize List Of Priorites" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_20">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strListOfPriorities]</OutArgument>
               </Assign.To>
@@ -436,19 +445,19 @@
                 </InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="ui:QueueItemPriority" CurrentIndex="{x:Null}" DisplayName="For Each Priority" sap:VirtualizedContainerService.HintSize="434,276" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Priorities]">
+            <ui:ForEach x:TypeArguments="ui:QueueItemPriority" CurrentIndex="{x:Null}" DisplayName="For Each Priority" sap:VirtualizedContainerService.HintSize="478,305" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Priorities]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:QueueItemPriority">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:QueueItemPriority" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,172" sap2010:WorkflowViewState.IdRef="Sequence_24">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Concatenate" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                    <Assign DisplayName="Concatenate" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_21">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[strListOfPriorities]</OutArgument>
                       </Assign.To>
@@ -460,7 +469,7 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
-            <Assign DisplayName="Remove last comma" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+            <Assign DisplayName="Remove last comma" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_22">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strListOfPriorities]</OutArgument>
               </Assign.To>
@@ -468,7 +477,7 @@
                 <InArgument x:TypeArguments="x:String">[Left(strListOfPriorities, strListOfPriorities.Length - 1)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Concatenate Endpoint" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+            <Assign DisplayName="Concatenate Endpoint" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_23">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strEndpointFormat]</OutArgument>
               </Assign.To>
@@ -479,7 +488,7 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -488,16 +497,16 @@
           </Sequence>
         </If.Else>
       </If>
-      <Assign DisplayName="Add FilterTop" sap:VirtualizedContainerService.HintSize="833,64" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign DisplayName="Add FilterTop" sap:VirtualizedContainerService.HintSize="618,65" sap2010:WorkflowViewState.IdRef="Assign_10">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strEndpointFormat]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String" xml:space="preserve">[strEndpointFormat + "&amp;%24select=Status,SpecificContent,RetryNumber,Id,Key,QueueDefinitionId,ReviewerUserId,Priority,Reference,RowVersion,ProcessingException,StartProcessing,ReviewStatus,Progress,Output,DueDate,DeferDate" + _
+          <InArgument x:TypeArguments="x:String" xml:space="preserve">[strEndpointFormat + "&amp;%24select=Status,SpecificContent,RetryNumber,Id,Key,QueueDefinitionId,ReviewerUserId,Priority,Reference,RowVersion,ProcessingException,StartProcessing,ReviewStatus,Progress,Output,DueDate,DeferDate".Replace(",","%2C") + _
 "&amp;%24top=" + CStr(FilterTop)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="833,51" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[strEndpointFormat]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="618,52" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[strEndpointFormat]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -505,11 +514,11 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:OrchestratorHttpRequest JSONPayload="{x:Null}" ResponseHeaders="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Orchestrator HTTP Request" FolderPath="[OrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="833,22" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" Method="GET" RelativeEndpoint="[strEndpointFormat]" Result="[jsonResponse]" StatusCode="[intStatusCode]" />
+      <ui:OrchestratorHttpRequest ResponseHeaders="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Orchestrator HTTP Request" FolderPath="[OrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="618,568" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" JSONPayload="{}{}" Method="GET" RelativeEndpoint="[strEndpointFormat]" Result="[jsonResponse]" StatusCode="[intStatusCode]" />
     </Sequence>
-    <If Condition="[intStatusCode = 200]" DisplayName="If Status OK" sap:VirtualizedContainerService.HintSize="875,272" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[intStatusCode = 200]" DisplayName="If Status OK" sap:VirtualizedContainerService.HintSize="680,490" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Then>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke __DeserializeQueueItems workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="__DeserializeQueueItems.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke __DeserializeQueueItems workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="__DeserializeQueueItems.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="jsonResponse">[jsonResponse]</InArgument>
             <OutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="QueueItems">[QueueItems]</OutArgument>
@@ -517,13 +526,13 @@
         </ui:InvokeWorkflowFile>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_17">
+        <Sequence sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw DisplayName="Throw Exception" Exception="[new SystemException(String.Format(&quot;Error retrieving info from Orchestrator: STATUS {0}, \r\n Response: {1}&quot;, CStr(intStatusCode), jsonResponse))]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          <Throw DisplayName="Throw Exception" Exception="[new SystemException(String.Format(&quot;Error retrieving info from Orchestrator: STATUS {0}, \r\n Response: {1}&quot;, CStr(intStatusCode), jsonResponse))]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
         </Sequence>
       </If.Else>
     </If>
