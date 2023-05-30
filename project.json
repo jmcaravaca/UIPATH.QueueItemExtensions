@@ -4,14 +4,14 @@
   "main": "NewActivity.xaml",
   "dependencies": {
     "Newtonsoft.Json": "13.0.1",
-    "UiPath.System.Activities": "22.4.1",
-    "UiPath.WebAPI.Activities": "1.13.2"
+    "UiPath.System.Activities": "23.4.2",
+    "UiPath.WebAPI.Activities": "1.16.2"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.6.0",
-  "projectVersion": "3.0.0",
+  "projectVersion": "3.0.3",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -19,6 +19,7 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
