@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1176,819</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1156,786</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TC_002_Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -119,7 +119,9 @@
           <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterTo" />
           <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterFrom" />
           <InArgument x:TypeArguments="x:String" x:Key="Reference" />
-          <InArgument x:TypeArguments="x:Int32" x:Key="FilterTop" />
+          <InArgument x:TypeArguments="x:Int32" x:Key="FilterTop">
+            <Literal x:TypeArguments="x:Int32" Value="327" />
+          </InArgument>
           <InArgument x:TypeArguments="x:Boolean" x:Key="Continue_OnError">
             <Literal x:TypeArguments="x:Boolean" />
           </InArgument>
