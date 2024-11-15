@@ -1,5 +1,6 @@
 {
   "name": "QueueItemExtensions",
+  "projectId": "8cacf223-224f-4314-857d-77d2619c9e8d",
   "description": "This library provides additional methods to get and manipulate queue items by using the Orchestrator API:\r\n- Modify SpecificContent\r\n- Get Queue Items (more than 100 items per call)\r\n- Get All Queue Items (filtered by \"Progress\" String)\r\n- Get All Queue Items (filtered by key-value pair in SpecificContent)",
   "main": "NewActivity.xaml",
   "dependencies": {
@@ -41,7 +42,8 @@
         "__SerializeKeyValuePairFilter.xaml",
         "__GetOrchestratorFolderId.xaml",
         "__DeserializeQueueItems.xaml",
-        "_TestDataAdd.xaml"
+        "_TestDataAdd.xaml",
+        "Get Queue Items By Specific Data.xaml"
       ]
     },
     "processOptions": {
@@ -110,9 +112,17 @@
         "dataVariationFilePath": ".variations\\TestDataTC_010_Sheet1.json",
         "testCaseType": "TestCase",
         "fileName": "TC_010_Get Datatable From QueueItems.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "7d607388-7ba3-43d4-8881-803cbc3b02a2",
+        "dataVariationFilePath": ".variations\\TestDataTC_010_Sheet1.json",
+        "testCaseType": "TestCase",
+        "fileName": "TC_010_Get Datatable From QueueItems - Copy (1).xaml"
       }
     ],
-    "modernBehavior": true
+    "modernBehavior": true,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "isTemplate": false,

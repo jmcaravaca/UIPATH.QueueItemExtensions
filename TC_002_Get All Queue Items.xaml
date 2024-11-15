@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TC_002_Get_All_Queue_Items" this:TC_002_Get_All_Queue_Items.QueueName="JCV_Test" this:TC_002_Get_All_Queue_Items.OrchestratorFolderPath="RPA CoE/Test" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TC_002_Get_All_Queue_Items" this:TC_002_Get_All_Queue_Items.QueueName="TestExtensions" this:TC_002_Get_All_Queue_Items.OrchestratorFolderPath="Shared" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="QueueName" Type="InArgument(x:String)" />
     <x:Property Name="OrchestratorFolderPath" Type="InArgument(x:String)" />
@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>838,969</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1176,819</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TC_002_Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -60,6 +60,7 @@
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
       <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
@@ -73,12 +74,12 @@
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC_002_Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="512,904" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC_002_Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="512,721" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(ui:QueueItem)" Name="qItems" />
     </Sequence.Variables>
@@ -94,7 +95,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="450,407" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:Nullable(s:DateTime)" Name="dateFilterFrom" />
         <Variable x:TypeArguments="x:String" Name="dateFromAsset" />
@@ -104,24 +105,19 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="AR002_LastReportingTime" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
-        <ui:GetRobotAsset.Value>
-          <OutArgument x:TypeArguments="x:String">[dateFromAsset]</OutArgument>
-        </ui:GetRobotAsset.Value>
-      </ui:GetRobotAsset>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Get All Queue Items workflow" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Get All Queue Items.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="QueueName">
             <VisualBasicValue x:TypeArguments="x:String" ExpressionText="QueueName" />
           </InArgument>
-          <InArgument x:TypeArguments="ui:QueueItemStatus[]" x:Key="QueueItemStates" />
+          <InArgument x:TypeArguments="ui:QueueItemStatus[]" x:Key="QueueItemStates">
+            <VisualBasicValue x:TypeArguments="ui:QueueItemStatus[]" ExpressionText="{}{QueueitemStatus.Failed}" />
+          </InArgument>
           <OutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="QueueItems">
             <VisualBasicReference x:TypeArguments="scg:List(ui:QueueItem)" ExpressionText="qItems" />
           </OutArgument>
           <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterTo" />
-          <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterFrom">
-            <VisualBasicValue x:TypeArguments="s:Nullable(s:DateTime)" ExpressionText="CDate(dateFromAsset)" />
-          </InArgument>
+          <InArgument x:TypeArguments="s:Nullable(s:DateTime)" x:Key="FilterFrom" />
           <InArgument x:TypeArguments="x:String" x:Key="Reference" />
           <InArgument x:TypeArguments="x:Int32" x:Key="FilterTop" />
           <InArgument x:TypeArguments="x:Boolean" x:Key="Continue_OnError">

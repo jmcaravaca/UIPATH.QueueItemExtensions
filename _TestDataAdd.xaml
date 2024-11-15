@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_TestDataAdd" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1226,827" sap2010:WorkflowViewState.IdRef="_TestDataAdd_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_TestDataAdd" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1004,833" sap2010:WorkflowViewState.IdRef="_TestDataAdd_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
       <x:String>Microsoft.VisualBasic</x:String>
@@ -40,12 +40,14 @@
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
@@ -56,9 +58,10 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_TestDataAdd" sap:VirtualizedContainerService.HintSize="326,233" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_TestDataAdd" sap:VirtualizedContainerService.HintSize="450,768" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:QueueItem" Name="titem" />
     </Sequence.Variables>
@@ -67,13 +70,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:AddTransactionItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Transaction Item" sap:VirtualizedContainerService.HintSize="284,22" sap2010:WorkflowViewState.IdRef="AddTransactionItem_1" QueueType="TestQueueOutput" Reference="[Now.ToString(&quot;ss&quot;)]" TransactionItem="[titem]">
+    <ui:AddTransactionItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Transaction Item" sap:VirtualizedContainerService.HintSize="388,194" sap2010:WorkflowViewState.IdRef="AddTransactionItem_1" QueueType="TestExtensions" Reference="[Now.ToString(&quot;ss&quot;)]" TransactionItem="[titem]">
       <ui:AddTransactionItem.TransactionInformation>
         <InArgument x:TypeArguments="x:String" x:Key="DataSpec1">[Now.ToString("HH")]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="DataSpec2">[Now.ToString("ss")]</InArgument>
       </ui:AddTransactionItem.TransactionInformation>
     </ui:AddTransactionItem>
-    <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_1" Reason="Error test" Status="Failed" TransactionItem="[titem]">
+    <ui:SetTransactionProgress TimeoutMS="{x:Null}" DisplayName="Set Transaction Progress" sap:VirtualizedContainerService.HintSize="388,192" sap2010:WorkflowViewState.IdRef="SetTransactionProgress_1" Progress="Test" TransactionItem="[tItem]" />
+    <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="388,191" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_1" Reason="Error test" Status="Successful" TransactionItem="[titem]">
       <ui:SetTransactionStatus.Analytics>
         <scg:Dictionary x:TypeArguments="x:String, InArgument" />
       </ui:SetTransactionStatus.Analytics>

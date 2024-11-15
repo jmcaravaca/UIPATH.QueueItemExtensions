@@ -1,0 +1,93 @@
+{
+  "DisplayName": "Get Queue Items By Specific Data",
+  "Tooltip": "DEPRECATED \r\nReturns a List<QueueItem> with all the QueueItems where the Key-Value pair exists in the Specific Content.\nLimit to 1000 items.\nCan also filter by Reference (StartsWith)\nINPUTS:\n- QueueName: String with the full QueueName\n- Key: String, Key to filter by\n- Value: Object, Value to filter by\n- Reference (optional): References of the queue items (Can be empty)\n- Top (optional): Number of items to retrieve. If left empty it will default to 1000\nOUTPUTS:\n- QueueItems: List of QueueItems found",
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "QueueName",
+      "DisplayName": "QueueName",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "QueueItems",
+      "DisplayName": "QueueItems",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Reference",
+      "DisplayName": "Reference",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Key",
+      "DisplayName": "Key",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Value",
+      "DisplayName": "Value",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "OrchestratorFolderPath",
+      "DisplayName": "OrchestratorFolderPath",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Top",
+      "DisplayName": "Top",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "Number",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}

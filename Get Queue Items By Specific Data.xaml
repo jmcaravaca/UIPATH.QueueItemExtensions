@@ -11,8 +11,8 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap2010:Annotation.AnnotationText>UPTF000003B8eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiUmV0dXJucyBhIExpc3Q8UXVldWVJdGVtPiB3aXRoIGFsbCB0aGUgUXVldWVJdGVtcyB3aGVyZSB0aGUgS2V5LVZhbHVlIHBhaXIgZXhpc3RzIGluIHRoZSBTcGVjaWZpYyBDb250ZW50Llx1MDAwZFx1MDAwYUxpbWl0IHRvIDEwMDAgaXRlbXMuXHUwMDBkXHUwMDBhQ2FuIGFsc28gZmlsdGVyIGJ5IFJlZmVyZW5jZSAoU3RhcnRzV2l0aClcdTAwMGRcdTAwMGFJTlBVVFM6XHUwMDBkXHUwMDBhLSBRdWV1ZU5hbWU6IFN0cmluZyB3aXRoIHRoZSBmdWxsIFF1ZXVlTmFtZVx1MDAwZFx1MDAwYS0gS2V5OiBTdHJpbmcsIEtleSB0byBmaWx0ZXIgYnlcdTAwMGRcdTAwMGEtIFZhbHVlOiBPYmplY3QsIFZhbHVlIHRvIGZpbHRlciBieVx1MDAwZFx1MDAwYS0gUmVmZXJlbmNlIChvcHRpb25hbCk6IFJlZmVyZW5jZXMgb2YgdGhlIHF1ZXVlIGl0ZW1zIChDYW4gYmUgZW1wdHkpXHUwMDBkXHUwMDBhLSBUb3AgKG9wdGlvbmFsKTogTnVtYmVyIG9mIGl0ZW1zIHRvIHJldHJpZXZlLiBJZiBsZWZ0IGVtcHR5IGl0IHdpbGwgZGVmYXVsdCB0byAxMDAwXHUwMDBkXHUwMDBhT1VUUFVUUzpcdTAwMGRcdTAwMGEtIFF1ZXVlSXRlbXM6IExpc3Qgb2YgUXVldWVJdGVtcyBmb3VuZFx1MDAwZFx1MDAwYSIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>997,2456</sap:VirtualizedContainerService.HintSize>
+  <sap2010:Annotation.AnnotationText>UPTF00000338eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiREVQUkVDQVRFRCBcclxuUmV0dXJucyBhIExpc3Q8UXVldWVJdGVtPiB3aXRoIGFsbCB0aGUgUXVldWVJdGVtcyB3aGVyZSB0aGUgS2V5LVZhbHVlIHBhaXIgZXhpc3RzIGluIHRoZSBTcGVjaWZpYyBDb250ZW50LlxuTGltaXQgdG8gMTAwMCBpdGVtcy5cbkNhbiBhbHNvIGZpbHRlciBieSBSZWZlcmVuY2UgKFN0YXJ0c1dpdGgpXG5JTlBVVFM6XG4tIFF1ZXVlTmFtZTogU3RyaW5nIHdpdGggdGhlIGZ1bGwgUXVldWVOYW1lXG4tIEtleTogU3RyaW5nLCBLZXkgdG8gZmlsdGVyIGJ5XG4tIFZhbHVlOiBPYmplY3QsIFZhbHVlIHRvIGZpbHRlciBieVxuLSBSZWZlcmVuY2UgKG9wdGlvbmFsKTogUmVmZXJlbmNlcyBvZiB0aGUgcXVldWUgaXRlbXMgKENhbiBiZSBlbXB0eSlcbi0gVG9wIChvcHRpb25hbCk6IE51bWJlciBvZiBpdGVtcyB0byByZXRyaWV2ZS4gSWYgbGVmdCBlbXB0eSBpdCB3aWxsIGRlZmF1bHQgdG8gMTAwMFxuT1VUUFVUUzpcbi0gUXVldWVJdGVtczogTGlzdCBvZiBRdWV1ZUl0ZW1zIGZvdW5kIiwiPFZlcnNpb24+a19fQmFja2luZ0ZpZWxkIjoxfQ==</sap2010:Annotation.AnnotationText>
+  <sap:VirtualizedContainerService.HintSize>1004,3458</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -62,12 +62,14 @@
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
@@ -83,7 +85,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Returns a List&lt;QueueItem&gt; with all the QueueItems where the Key-Value pair exists in the Specific Content.&#xA;Limit to 1000 items.&#xA;Can also filter by Reference (StartsWith)&#xA;INPUTS:&#xA;- QueueName: String with the full QueueName&#xA;- Key: String, Key to filter by&#xA;- Value: Object, Value to filter by&#xA;- Reference (optional): References of the queue items (Can be empty)&#xA;- Top (optional): Number of items to retrieve. If left empty it will default to 1000&#xA;OUTPUTS:&#xA;- QueueItems: List of QueueItems found&#xA;" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="875,2391" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="DEPRECATED &#xD;&#xA;Returns a List&lt;QueueItem&gt; with all the QueueItems where the Key-Value pair exists in the Specific Content.&#xA;Limit to 1000 items.&#xA;Can also filter by Reference (StartsWith)&#xA;INPUTS:&#xA;- QueueName: String with the full QueueName&#xA;- Key: String, Key to filter by&#xA;- Value: Object, Value to filter by&#xA;- Reference (optional): References of the queue items (Can be empty)&#xA;- Top (optional): Number of items to retrieve. If left empty it will default to 1000&#xA;OUTPUTS:&#xA;- QueueItems: List of QueueItems found" DisplayName="Get Queue Items By Progress" sap:VirtualizedContainerService.HintSize="572,3393" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="jsonResponse" />
       <Variable x:TypeArguments="x:Int32" Name="intStatusCode" />
@@ -95,7 +97,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[String.IsNullOrEmpty(Key)]" DisplayName="If key is Empty, Throw Exception" sap:VirtualizedContainerService.HintSize="833,301" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[String.IsNullOrEmpty(Key)]" DisplayName="If key is Empty, Throw Exception" sap:VirtualizedContainerService.HintSize="510,360" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -103,13 +105,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw DisplayName="Throw Key Empty" Exception="[new BusinessRuleException(&quot;Key cannot be empty!&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          <Throw DisplayName="Throw Key Empty" Exception="[new BusinessRuleException(&quot;Key cannot be empty!&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
         </Sequence>
       </If.Then>
       <If.Else>
@@ -122,21 +124,21 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[String.IsNullOrEmpty(QueueName)]" DisplayName="If QueueName is Empty, Throw Exception" sap:VirtualizedContainerService.HintSize="833,51" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[String.IsNullOrEmpty(QueueName)]" DisplayName="If QueueName is Empty, Throw Exception" sap:VirtualizedContainerService.HintSize="510,360" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw DisplayName="Throw Progress Empty" Exception="[new BusinessRuleException(&quot;Progress cannot be empty!&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+          <Throw DisplayName="Throw Progress Empty" Exception="[new BusinessRuleException(&quot;Progress cannot be empty!&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
         </Sequence>
       </If.Then>
       <If.Else>
@@ -149,7 +151,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[Top = 0]" DisplayName="If top is empty/0, force it to &quot;1000&quot;" sap:VirtualizedContainerService.HintSize="833,405" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[Top = 0]" DisplayName="If top is empty/0, force it to &quot;1000&quot;" sap:VirtualizedContainerService.HintSize="510,616" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -157,13 +159,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[Top]</OutArgument>
             </Assign.To>
@@ -174,9 +176,9 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <If Condition="[Top &gt; 1000]" DisplayName="If Top &gt; 1000, clamp to 1000" sap:VirtualizedContainerService.HintSize="484,247" sap2010:WorkflowViewState.IdRef="If_5">
+        <If Condition="[Top &gt; 1000]" DisplayName="If Top &gt; 1000, clamp to 1000" sap:VirtualizedContainerService.HintSize="468,264" sap2010:WorkflowViewState.IdRef="If_5">
           <If.Then>
-            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[Top]</OutArgument>
               </Assign.To>
@@ -197,7 +199,7 @@
         </If>
       </If.Else>
     </If>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetQueueDefinitionId workflow" sap:VirtualizedContainerService.HintSize="833,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="__GetQueueDefinitionId.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetQueueDefinitionId workflow" sap:VirtualizedContainerService.HintSize="510,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="__GetQueueDefinitionId.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="QueueName">[QueueName]</InArgument>
         <OutArgument x:TypeArguments="x:Int32" x:Key="QueueId">[queueId]</OutArgument>
@@ -210,7 +212,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <Sequence sap2010:Annotation.AnnotationText="CURL Example:&#xA;&#xA;curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20QUEUEID%20and%20startswith(Reference%2C'REPLACE')%20and%20contains(SpecificData%2C%20'%22KEY%22%3A%22VALUE%22')&amp;%24top=1000&quot; -H  &quot;accept: application/json&quot;" DisplayName="API CALL" sap:VirtualizedContainerService.HintSize="833,751" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence sap2010:Annotation.AnnotationText="CURL Example:&#xA;&#xA;curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20QUEUEID%20and%20startswith(Reference%2C'REPLACE')%20and%20contains(SpecificData%2C%20'%22KEY%22%3A%22VALUE%22')&amp;%24top=1000&quot; -H  &quot;accept: application/json&quot;" DisplayName="API CALL" sap:VirtualizedContainerService.HintSize="510,1018" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strEndpointFormat" />
         <Variable x:TypeArguments="x:String" Default="/odata/QueueItems/?" Name="strEndpointBase" />
@@ -223,7 +225,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="334,64" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_6">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strEndpointBase]</OutArgument>
         </Assign.To>
@@ -235,7 +237,7 @@
 "&amp;%24top={3}"]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="K-V pair is serialized onto the expected ODATA Format so any object can be passed for filter" DisplayName="Invoke __SerializeKeyValuePairFilter workflow" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="__SerializeKeyValuePairFilter.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="K-V pair is serialized onto the expected ODATA Format so any object can be passed for filter" DisplayName="Invoke __SerializeKeyValuePairFilter workflow" sap:VirtualizedContainerService.HintSize="434,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="__SerializeKeyValuePairFilter.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="Key">[Key]</InArgument>
           <InArgument x:TypeArguments="x:Object" x:Key="Value">[Value]</InArgument>
@@ -247,7 +249,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <Assign sap2010:Annotation.AnnotationText="" DisplayName="Assign Endpoint" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign sap2010:Annotation.AnnotationText="" DisplayName="Assign Endpoint" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strEndpointFormat]</OutArgument>
         </Assign.To>
@@ -260,7 +262,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[strEndpointFormat]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[strEndpointFormat]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -268,9 +270,9 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:OrchestratorHttpRequest JSONPayload="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Orchestrator HTTP Request" FolderPath="[OrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" Method="GET" RelativeEndpoint="[strEndpointFormat]" ResponseHeaders="[outHeaders]" Result="[jsonResponse]" StatusCode="[intStatusCode]" />
+      <ui:OrchestratorHttpRequest JSONPayload="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Orchestrator HTTP Request" FolderPath="[OrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="434,242" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" Method="GET" RelativeEndpoint="[strEndpointFormat]" ResponseHeaders="[outHeaders]" Result="[jsonResponse]" StatusCode="[intStatusCode]" />
     </Sequence>
-    <If Condition="[intStatusCode = 200]" DisplayName="If Status OK" sap:VirtualizedContainerService.HintSize="833,272" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[intStatusCode = 200]" DisplayName="If Status OK" sap:VirtualizedContainerService.HintSize="510,408" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Then>
         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke __DeserializeQueueItems workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="__DeserializeQueueItems.xaml">
           <ui:InvokeWorkflowFile.Arguments>
