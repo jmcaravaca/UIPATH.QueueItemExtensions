@@ -24,7 +24,7 @@
       "Tooltip": "Queue Item Reference (StartsWith)",
       "Placeholder": null,
       "Widget": "TextComposer",
-      "IsRequired": true,
+      "IsRequired": false,
       "IsPrincipal": true,
       "ArgumentType": 0,
       "DataSourceItems": []
@@ -36,7 +36,7 @@
       "Tooltip": "Same as QueueItems Get",
       "Placeholder": null,
       "Widget": null,
-      "IsRequired": true,
+      "IsRequired": false,
       "IsPrincipal": true,
       "ArgumentType": 0,
       "DataSourceItems": []
@@ -108,22 +108,10 @@
       "Tooltip": "Same as QueueItems Get",
       "Placeholder": null,
       "Widget": "TextComposer",
-      "IsRequired": true,
-      "IsPrincipal": true,
-      "ArgumentType": 0,
-      "DataSourceItems": []
-    },
-    {
-      "Name": "Recursive",
-      "DisplayName": "Recursive",
-      "Category": "Settings",
-      "Tooltip": "Same as QueueItems Get",
-      "Placeholder": null,
-      "Widget": "Toggle",
       "IsRequired": false,
       "IsPrincipal": true,
       "ArgumentType": 0,
-      "DataSourceItems": null
+      "DataSourceItems": []
     },
     {
       "Name": "FilterTimeProcessing",

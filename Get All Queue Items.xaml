@@ -1,7 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Get_All_Queue_Items" this:Get_All_Queue_Items.FilterTimeProcessing="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="QueueName" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="{}{QueueItemStatus.Successful, QueueItemStatus.Failed} -&gt; Default &quot;All&quot; if Empty&#xA;{QueueItemPriority.High} -&gt; Default &quot;All&quot; if Empty" Name="QueueItemStates" Type="InArgument(ui:QueueItemStatus[])" />
+    <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="QueueName" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property sap2010:Annotation.AnnotationText="{}{QueueItemStatus.Successful, QueueItemStatus.Failed} -&gt; Default &quot;All&quot; if Empty&#xD;&#xA;{QueueItemPriority.High} -&gt; Default &quot;All&quot; if Empty" Name="QueueItemStates" Type="InArgument(ui:QueueItemStatus[])" />
     <x:Property sap2010:Annotation.AnnotationText="List of queueitems" Name="QueueItems" Type="OutArgument(scg:List(ui:QueueItem))" />
     <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="FilterTo" Type="InArgument(s:Nullable(s:DateTime))" />
     <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="FilterFrom" Type="InArgument(s:Nullable(s:DateTime))" />
@@ -9,7 +13,11 @@
     <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="FilterTop" Type="InArgument(x:Int32)" />
     <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="Continue_OnError" Type="InArgument(x:Boolean)" />
     <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="Priorities" Type="InArgument(ui:QueueItemPriority[])" />
-    <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="OrchestratorFolderPath" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="OrchestratorFolderPath" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
     <x:Property sap2010:Annotation.AnnotationText="By default, &quot;FilterTo&quot; and &quot;FilterFrom&quot; will use &quot;CreationTime&quot; .Set this to TRUE to use &quot;StartProcessing Time&quot; and &quot;End Processing Time&quot;. instead " Name="FilterTimeProcessing" Type="InArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
@@ -626,7 +634,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Make calls until no more data" sap:VirtualizedContainerService.HintSize="670,2242" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2" MaxIterations="50">
+      <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[Recursive And If(FilterTop.EQUALS(-1), True, QueueItems.count &lt;= FilterTop)]" DisplayName="Make calls until no more data" sap:VirtualizedContainerService.HintSize="670,2242" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2" MaxIterations="50">
         <ui:InterruptibleDoWhile.Body>
           <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="634,2076" sap2010:WorkflowViewState.IdRef="Sequence_33">
             <sap:WorkflowViewStateService.ViewState>
@@ -731,9 +739,6 @@
             </Sequence>
           </Sequence>
         </ui:InterruptibleDoWhile.Body>
-        <ui:InterruptibleDoWhile.Condition>
-          <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Recursive And If(FilterTop.EQUALS(-1), True, QueueItems.count &lt;= FilterTop)" />
-        </ui:InterruptibleDoWhile.Condition>
       </ui:InterruptibleDoWhile>
     </Sequence>
   </Sequence>
